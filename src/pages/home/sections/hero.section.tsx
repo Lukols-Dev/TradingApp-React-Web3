@@ -130,8 +130,8 @@ export const HeroSection: FC = () => {
             </defs>
           </svg>
         </a>
-        <div className="blur-[2px] bg-white/20 rounded-lg">
-          <a className="flex items-center justify-center w-40 h-12 border-[1px] border-solid border-white rounded-lg overflow-hidden">
+        <div className=" cursor-pointer blur-[2px] bg-white/20 rounded-lg">
+          <p className="flex items-center justify-center w-40 h-12 border-[1px] border-solid border-white rounded-lg overflow-hidden">
             <svg
               width="120"
               height="40"
@@ -232,7 +232,7 @@ export const HeroSection: FC = () => {
                 fill="white"
               />
             </svg>
-          </a>
+          </p>
         </div>
       </div>
     </section>

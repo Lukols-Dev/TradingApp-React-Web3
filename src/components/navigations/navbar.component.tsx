@@ -34,19 +34,14 @@ export const NavBar: FC = () => {
             Discord
           </Link>
         </nav>
+
         <div className="flex gap-5">
-          <Link
-            className="text-white text-base font-medium font-roboto border-[1px] border-solid border-white rounded-lg py-2 px-3"
-            to="/"
-          >
+          <p className=" blur-[2px] cursor-pointer text-white text-base font-medium font-roboto border-[1px] border-solid border-white rounded-lg py-2 px-3">
             Sign in
-          </Link>
-          <Link
-            className="text-white text-base font-medium font-roboto rounded-lg py-2 px-3 bg-gradient-to-r from-red-500 to-blue-500"
-            to="/"
-          >
+          </p>
+          <p className=" blur-[2px] cursor-pointer text-white text-base font-medium font-roboto rounded-lg py-2 px-3 bg-gradient-to-r from-red-500 to-blue-500">
             Sign up
-          </Link>
+          </p>
         </div>
       </div>
     </header>
