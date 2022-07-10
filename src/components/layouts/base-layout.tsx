@@ -6,7 +6,7 @@ export const BaseLayout: FC = () => {
   return (
     <div className="bg-[#0B0B0F]">
       <NavBar />
-      <main className="mx-36 h-screen flex">
+      <main className="mx-36 flex">
         <Outlet />
       </main>
     </div>

@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { PhoneGroupMockup } from "../../../assets/gorup-phones";
 
 export const HeroSection: FC = () => {
   return (
@@ -234,6 +235,11 @@ export const HeroSection: FC = () => {
             </svg>
           </p>
         </div>
+      </div>
+      <div className="h-[460px] mt-11 relative flex flex-col items-center justify-center">
+        <PhoneGroupMockup />
+        <div className="absolute bottom-8 w-full h-36 blur-[30px] bg-[#0B0B0F]"></div>
+        <div className="absolute bottom-0 w-full h-32  bg-gradient-to-t from-[#0B0B0F] to-[#0B0B0F]/[1]"></div>
       </div>
     </section>
   );
