@@ -3,11 +3,11 @@ import { PhoneGroupMockup } from "../../../assets/gorup-phones";
 
 export const HeroSection: FC = () => {
   return (
-    <section className="flex flex-col w-full h-[1440px] items-center">
-      <h1 className="text-7xl text-white font-black font-inter mt-20 w-[780px] text-center">
+    <section className="flex flex-col w-full h-[1040px] items-center">
+      <h1 className="text-5xl w-[500px] xl:text-7xl xl:w-[780px] text-white font-black font-inter mt-32  text-center ">
         Join the best AI trading app
       </h1>
-      <p className="mt-4 text-base text-[#898CA9] font-normal	 font-inter ">
+      <p className="text-xs	text-center mt-4 xl:text-base text-[#898CA9] font-normal	 font-inter ">
         Buy, sell with TradingApp, the app to assist any trader at any level.
       </p>
       <div className="flex mt-9 gap-5 ">
@@ -238,8 +238,8 @@ export const HeroSection: FC = () => {
       </div>
       <div className="h-[460px] mt-11 relative flex flex-col items-center justify-center">
         <PhoneGroupMockup />
-        <div className="absolute bottom-8 w-full h-36 blur-[30px] bg-[#0B0B0F]"></div>
-        <div className="absolute bottom-0 w-full h-32  bg-gradient-to-t from-[#0B0B0F] to-[#0B0B0F]/[1]"></div>
+        <div className="absolute bottom-8 w-full h-36 blur-[30px] bg-[#0B0B0F] z-2"></div>
+        <div className="absolute bottom-0 w-full h-32  bg-gradient-to-t from-[#0B0B0F] to-[#0B0B0F]/[1] z-2"></div>
       </div>
     </section>
   );
