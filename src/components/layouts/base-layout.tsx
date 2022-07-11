@@ -73,8 +73,8 @@ export const BaseLayout: FC = () => {
         />
       </svg>
 
-      <div className="hidden  xl:inline absolute left-[-200px] top-[200px] bg-[#2670FF]/[.4] blur-[100px] w-[400px] h-[400px] z-10"></div>
-      <div className="hidden  xl:inline absolute right-[-200px] top-[300px] bg-[#FF4141]/[.4] blur-[100px] w-[400px] h-[400px] z-10"></div>
+      <div className="hidden xl:inline absolute left-[-200px] top-[200px] bg-[#2670FF]/[.4] blur-[100px] w-[400px] h-[400px] z-10"></div>
+      <div className="hidden xl:inline absolute right-[-200px] top-[300px] bg-[#FF4141]/[.4] blur-[100px] w-[400px] h-[400px] z-10"></div>
       <img
         alt="Hero"
         src={Bitcoin}

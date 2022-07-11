@@ -4,14 +4,14 @@ import { PhoneGroupMockup } from "../../../assets/gorup-phones";
 export const HeroSection: FC = () => {
   return (
     <section className="flex flex-col w-full h-[1040px] items-center">
-      <h1 className="text-5xl w-[500px] xl:text-7xl xl:w-[780px] text-white font-black font-inter mt-32  text-center ">
+      <h1 className="text-2xl w-[300px] sm:text-5xl sm:w-[500px] xl:text-7xl xl:w-[780px] text-white font-black font-inter mt-32  text-center ">
         Join the best AI trading app
       </h1>
-      <p className="text-xs	text-center mt-4 xl:text-base text-[#898CA9] font-normal	 font-inter ">
+      <p className=" text-[10px] sm:text-xs	text-center mt-4 xl:text-base text-[#898CA9] font-normal	 font-inter ">
         Buy, sell with TradingApp, the app to assist any trader at any level.
       </p>
       <div className="flex mt-9 gap-5 ">
-        <a className="flex items-center justify-center w-40 h-12 border-[1px] border-solid border-white rounded-lg overflow-hidden">
+        <a className="flex items-center justify-center w-32  h-12 sm:w-40 sm:h-12 border-[1px] border-solid border-white rounded-lg overflow-hidden">
           <svg
             width="136"
             height="40"
@@ -132,7 +132,7 @@ export const HeroSection: FC = () => {
           </svg>
         </a>
         <div className=" cursor-pointer blur-[2px] bg-white/20 rounded-lg">
-          <p className="flex items-center justify-center w-40 h-12 border-[1px] border-solid border-white rounded-lg overflow-hidden">
+          <p className="flex items-center justify-center  w-32  h-12 sm:w-40 sm:h-12  border-[1px] border-solid border-white rounded-lg overflow-hidden">
             <svg
               width="120"
               height="40"
@@ -236,7 +236,7 @@ export const HeroSection: FC = () => {
           </p>
         </div>
       </div>
-      <div className="h-[460px] mt-11 relative flex flex-col items-center justify-center">
+      <div className="h-[300px] sm:h-[460px] mt-11 relative flex flex-col items-center justify-center">
         <PhoneGroupMockup />
         <div className="absolute bottom-8 w-full h-36 blur-[30px] bg-[#0B0B0F] z-2"></div>
         <div className="absolute bottom-0 w-full h-32  bg-gradient-to-t from-[#0B0B0F] to-[#0B0B0F]/[1] z-2"></div>

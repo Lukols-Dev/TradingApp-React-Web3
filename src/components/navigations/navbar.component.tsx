@@ -25,13 +25,13 @@ export const NavBar: FC = () => {
             </a>
             <Link
               className="blur-[2px] text-white text-base font-medium font-roboto"
-              to="/price"
+              to="/"
             >
               Price
             </Link>
             <Link
               className=" blur-[2px] text-white text-base font-medium font-roboto"
-              to="/team"
+              to="/"
             >
               Team
             </Link>
@@ -69,13 +69,13 @@ export const NavBar: FC = () => {
             </a>
             <Link
               className="w-full h-[40px] blur-[2px] text-white text-base font-medium font-roboto"
-              to="/price"
+              to="/"
             >
               Price
             </Link>
             <Link
               className="w-full h-[40px] blur-[2px] text-white text-base font-medium font-roboto"
-              to="/team"
+              to="/"
             >
               Team
             </Link>
