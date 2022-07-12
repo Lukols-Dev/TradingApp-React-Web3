@@ -17,7 +17,8 @@ export const HeroSection: FC = () => {
           download
           className="gap-2 flex items-center justify-center text-sm  h-12 sm:text-lg w-40 sm:h-12 border-[1px] border-solid border-white rounded-lg overflow-hidden text-white"
         >
-          <AiFillAndroid className="text-2xl sm:text-2xl" /> Pobierz
+          <AiFillAndroid className="text-2xl sm:text-2xl" />
+          Pobierz
         </a>
         <div className=" cursor-pointer blur-[2px] bg-white/20 rounded-lg">
           <p className="flex items-center justify-center  w-32  h-12 sm:w-40 sm:h-12  border-[1px] border-solid border-white rounded-lg overflow-hidden">
