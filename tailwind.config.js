@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
-        roboto: ["Roboto", "sans-serif"],
+        jura: ["Jura", "sans-serif"],
+        thicccboi: ["Thicccboi", "sans-serif"],
       },
     },
   },

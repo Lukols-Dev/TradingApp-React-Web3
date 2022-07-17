@@ -3,6 +3,7 @@ import { NavBar } from "../navigations";
 import { Outlet } from "react-router-dom";
 import Bitcoin from "../../assets/Bitcoin.png";
 import Litecoin from "../../assets/LiteCoin.png";
+import { Footer } from "../footer";
 
 export const BaseLayout: FC = () => {
   return (
@@ -47,7 +48,7 @@ export const BaseLayout: FC = () => {
         />
       </svg>
       <svg
-        className="hidden  xl:inline absolute right-[400px] top-[500px]"
+        className="hidden  xl:inline absolute right-[300px] top-[500px]"
         width="61"
         height="60"
         viewBox="0 0 61 60"
@@ -78,7 +79,7 @@ export const BaseLayout: FC = () => {
       <img
         alt="Hero"
         src={Bitcoin}
-        className="hidden  xl:inline absolute top-[300px] left-[325.75px] top-[520px] "
+        className="hidden  xl:inline absolute top-[300px] left-[250px] top-[520px] "
       />
       <img
         alt="Hero"
@@ -274,6 +275,7 @@ export const BaseLayout: FC = () => {
       <main className="mx-36 flex">
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 };
