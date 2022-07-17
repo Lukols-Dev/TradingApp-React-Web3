@@ -1,7 +1,27 @@
 import { FC } from "react";
+
 import { PhoneGroupMockup } from "../../../assets/gorup-phones";
 
+import { ref, listAll, getDownloadURL } from "firebase/storage";
+import { firebaseStorage } from "../../../config/firebase";
+
 export const HeroSection: FC = () => {
+  const downloadApp = async () => {
+    try {
+      const response = await getDownloadURL(
+        (
+          await listAll(ref(firebaseStorage, "download/"))
+        ).items[0]
+      );
+
+      if (response) {
+        window.open(response, "_self");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <section className="flex flex-col w-full h-[1100px] items-center">
       <h1 className="text-2xl w-[300px] sm:text-5xl sm:w-[500px] xl:text-7xl xl:w-[780px] text-white font-black font-thicccboi mt-32  text-center ">
@@ -11,10 +31,9 @@ export const HeroSection: FC = () => {
         Buy and sell with TradingApp. The app assist any trader at any level.
       </p>
       <div className="flex mt-9 gap-5 ">
-        <a
-          href="/TradingApp-release-1.0.4.apk"
-          download
+        <button
           className="flex items-center justify-center  w-32  h-12 sm:w-40 sm:h-12  border-[1px] border-solid border-white rounded-lg overflow-hidden"
+          onClick={downloadApp}
         >
           <svg
             width="96"
@@ -36,7 +55,7 @@ export const HeroSection: FC = () => {
               fill="white"
             />
           </svg>
-        </a>
+        </button>
         <div className=" cursor-pointer blur-[2px] bg-white/20 rounded-lg">
           <p className="flex items-center justify-center  w-32  h-12 sm:w-40 sm:h-12  border-[1px] border-solid border-white rounded-lg overflow-hidden">
             <svg
