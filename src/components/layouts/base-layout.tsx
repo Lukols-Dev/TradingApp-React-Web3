@@ -1,9 +1,15 @@
 import { FC } from "react";
 import { NavBar } from "../navigations";
 import { Outlet } from "react-router-dom";
+import { Footer } from "../footer";
+
 import Bitcoin from "../../assets/Bitcoin.png";
 import Litecoin from "../../assets/LiteCoin.png";
-import { Footer } from "../footer";
+import Ethereum from "../../assets/coins/ethereum.svg";
+import Monero from "../../assets/coins/monero.svg";
+import Star2 from "../../assets/stars/star_2.svg";
+import Star3 from "../../assets/stars/star_3.svg";
+import Star1 from "../../assets/stars/star_1.svg";
 
 export const BaseLayout: FC = () => {
   return (
@@ -79,15 +85,15 @@ export const BaseLayout: FC = () => {
       <img
         alt="Hero"
         src={Bitcoin}
-        className="hidden  xl:inline absolute top-[300px] left-[250px] top-[520px] "
+        className="hidden  xl:inline absolute top-[300px] left-[250px] top-[520px]"
       />
       <img
         alt="Hero"
         src={Litecoin}
-        className="hidden  xl:inline absolute right-[300px] top-[253.67px] "
+        className="hidden  xl:inline absolute right-[300px] top-[253.67px]"
       />
       <svg
-        className=" absolute right-0 top-[800px] z-10 "
+        className=" absolute right-0 top-[800px] z-10"
         width="516"
         height="1045"
         viewBox="0 0 516 1045"
@@ -270,7 +276,31 @@ export const BaseLayout: FC = () => {
           />
         </g>
       </svg>
-
+      <img
+        className="hidden  xl:inline absolute top-[1600px] right-[250px]"
+        alt="ethereum"
+        src={Ethereum}
+      />
+      <img
+        className="hidden  xl:inline absolute top-[2300px] left-[150px]"
+        alt="ethereum"
+        src={Monero}
+      />
+      <img
+        className="hidden  xl:inline absolute top-[1500px] left-[250px]"
+        alt="ethereum"
+        src={Star3}
+      />
+      <img
+        className="hidden  xl:inline absolute top-[1400px] left-[200px]"
+        alt="ethereum"
+        src={Star2}
+      />
+      <img
+        className="hidden  xl:inline absolute top-[2300px] right-[250px]"
+        alt="ethereum"
+        src={Star1}
+      />
       <NavBar />
       <main className="mx-36 flex">
         <Outlet />

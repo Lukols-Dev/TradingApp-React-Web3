@@ -15,7 +15,7 @@ export const NavBar: FC = () => {
         <div className="mx-8 w-full h-20 xl:mx-36 flex items-center justify-between">
           <Link
             to="/"
-            className="text-white text-2xl font-bold font-jura flex gap-2 items-end justify-center"
+            className="text-white text-2xl font-normal font-jura flex gap-2 items-end justify-center"
           >
             <img alt="logo" src="logo.svg" />
             TradingApp
