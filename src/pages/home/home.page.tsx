@@ -5,6 +5,7 @@ import {
   EmptySection,
   HeroSection,
   InfoSection,
+  LearningSection,
 } from "./sections";
 
 export const Home: FC = () => {
@@ -12,6 +13,7 @@ export const Home: FC = () => {
     <div className="w-full flex flex-col justify-between">
       <HeroSection />
       <InfoSection />
+      <LearningSection />
       <AboutAppSection />
       <DiscordSection />
       <EmptySection />

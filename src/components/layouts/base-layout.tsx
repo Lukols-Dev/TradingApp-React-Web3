@@ -5,7 +5,6 @@ import { Footer } from "../footer";
 
 import Bitcoin from "../../assets/Bitcoin.png";
 import Litecoin from "../../assets/LiteCoin.png";
-import Ethereum from "../../assets/coins/ethereum.svg";
 import Monero from "../../assets/coins/monero.svg";
 import Star2 from "../../assets/stars/star_2.svg";
 import Star3 from "../../assets/stars/star_3.svg";
@@ -276,11 +275,7 @@ export const BaseLayout: FC = () => {
           />
         </g>
       </svg>
-      <img
-        className="hidden  xl:inline absolute top-[1600px] right-[250px]"
-        alt="ethereum"
-        src={Ethereum}
-      />
+
       <img
         className="hidden  xl:inline absolute top-[2300px] left-[150px]"
         alt="ethereum"

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { BaseLayout } from "../components/layouts";
-import { Home } from "../pages";
+import { Home, Price } from "../pages";
 
 export const BaseRoutes: FC = () => {
   return (
@@ -9,6 +9,7 @@ export const BaseRoutes: FC = () => {
       <Routes>
         <Route element={<BaseLayout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/price" element={<Price />} />
         </Route>
       </Routes>
     </BrowserRouter>

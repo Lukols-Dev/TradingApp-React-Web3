@@ -28,8 +28,8 @@ export const NavBar: FC = () => {
               Learn
             </a>
             <Link
-              className="blur-[2px] text-white text-xl  font-medium font-thicccboi"
-              to="/"
+              className="text-white text-xl  font-medium font-thicccboi"
+              to="/price"
             >
               Price
             </Link>
