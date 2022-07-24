@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDn8WFx-8C71VIlhq4Mip1oxVSwVWQEnHA",
-  authDomain: "tradingapp-d1497.firebaseapp.com",
-  projectId: "tradingapp-d1497",
-  storageBucket: "tradingapp-d1497.appspot.com",
-  messagingSenderId: "261220844062",
-  appId: "1:261220844062:web:bfbbc85dd9fb07b0e4640f",
-  measurementId: "G-ZJ7GN661YY",
+  apiKey: process.env.REACT_APP_PI_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
