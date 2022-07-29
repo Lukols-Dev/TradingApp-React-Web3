@@ -55,9 +55,12 @@ export const Price: FC = () => {
           </div>
         )}
 
-        <button className="mt-10 rounded-lg bg-[blue] px-8 py-3 text-white font-thicccboi font-medium">
-          Choose Plan
-        </button>
+        <a
+          href="https://buy.stripe.com/9AQbJ77YKcIz2xW8ww"
+          className="mt-10 rounded-lg bg-[blue] px-8 py-3 text-white font-thicccboi font-medium"
+        >
+          Subskrybuj
+        </a>
       </div>
     </div>
   );
