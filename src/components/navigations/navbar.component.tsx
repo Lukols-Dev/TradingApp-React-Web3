@@ -72,8 +72,8 @@ export const NavBar: FC = () => {
               Learn
             </a>
             <Link
-              className="w-full h-[40px] blur-[2px] text-white text-xl font-medium font-thicccboi"
-              to="/"
+              className="w-full h-[40px] text-white text-xl font-medium font-thicccboi"
+              to="/price"
             >
               Price
             </Link>

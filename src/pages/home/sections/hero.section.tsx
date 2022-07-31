@@ -23,11 +23,11 @@ export const HeroSection: FC = () => {
   };
 
   return (
-    <section className="flex flex-col w-full h-[1100px] items-center">
-      <h1 className="text-2xl w-[300px] sm:text-5xl sm:w-[500px] xl:text-7xl xl:w-[780px] text-white font-black font-thicccboi mt-32  text-center ">
+    <section className="flex flex-col w-full h-[800px] sm:h-[1100px] items-center">
+      <h1 className="text-3xl w-[300px] sm:text-5xl sm:w-[500px] xl:text-7xl xl:w-[780px] text-white font-black font-thicccboi mt-32  text-center ">
         Join the best AI trading app
       </h1>
-      <p className=" text-[10px] sm:text-xs	text-center mt-4 xl:text-base text-[#898CA9] font-normal	 font-thicccboi ">
+      <p className=" text-[12px] sm:text-xs	text-center mt-4 xl:text-base text-[#898CA9] font-normal font-thicccboi ">
         Buy and sell with TradingApp. The app assist any trader at any level.
       </p>
       <div className="flex mt-9 gap-5 ">
@@ -81,10 +81,10 @@ export const HeroSection: FC = () => {
           </p>
         </div>
       </div>
-      <div className="h-[300px] sm:h-[760px] mt-20 relative flex flex-col items-center justify-center">
+      <div className="h-[400px] sm:h-[760px] mt-20 relative flex flex-col items-center justify-center">
         <PhoneGroupMockup className="h-[700px] w-[700px]" />
-        <div className="absolute bottom-8 w-full h-48 blur-[20px] bg-[#0B0B0F] z-2"></div>
-        <div className="absolute bottom-0 w-full h-48  bg-gradient-to-t from-[#0B0B0F] to-[#0B0B0F]/[1] z-2"></div>
+        <div className="absolute bottom-8 w-full h-[100px] blur-[20px] bg-[#0B0B0F] z-2"></div>
+        <div className="absolute bottom-0 w-full h-[100px]  bg-gradient-to-t from-[#0B0B0F] to-[#0B0B0F]/[1] z-2"></div>
       </div>
     </section>
   );

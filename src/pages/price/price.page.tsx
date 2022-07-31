@@ -24,8 +24,8 @@ export const Price: FC = () => {
   }, []);
 
   return (
-    <div className="w-full h-[900px] flex justify-center items-center gap-20">
-      <div className="w-[400px] h-[500px] bg-white rounded-lg flex flex-col items-center">
+    <div className="w-full h-[900px] flex flex-col justify-center items-center gap-20">
+      <div className="w-[400px] h-[500px] sm:w-[400px] sm:h-[500px] bg-white rounded-lg flex flex-col items-center">
         <h2 className="text-4xl font-medium font-thicccboi mt-10">Premium</h2>
         <p className="text-lg text-[#898CA9] font-normal font-thicccboi mt-10">
           One price, zero restrictions.
