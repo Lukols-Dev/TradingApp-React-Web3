@@ -25,19 +25,19 @@ export const NavBar: FC = () => {
               className="text-white text-xl font-medium font-thicccboi"
               href="https://tradingapp.gitbook.io/tradingapp/"
             >
-              Learn
+              Kursy
             </a>
             <Link
               className="text-white text-xl  font-medium font-thicccboi"
               to="/price"
             >
-              Price
+              Cennik
             </Link>
             <Link
               className=" blur-[2px] text-white text-xl font-medium font-thicccboi"
               to="/"
             >
-              Team
+              Zespół
             </Link>
             <a
               className=" text-white text-xl  font-medium font-thicccboi"
@@ -48,10 +48,10 @@ export const NavBar: FC = () => {
           </nav>
           <div className="hidden xl:flex gap-5">
             <p className=" blur-[2px] cursor-pointer text-white text-base  font-medium font-thicccboi border-[1px] border-solid border-white rounded-lg py-2 px-3">
-              Sign in
+              Zaloguj się
             </p>
             <p className=" blur-[2px] cursor-pointer text-white text-base  font-medium font-thicccboi rounded-lg py-2 px-3 bg-gradient-to-r from-red-500 to-blue-500">
-              Sign up
+              Zarejestruj się
             </p>
           </div>
           <p
@@ -69,19 +69,19 @@ export const NavBar: FC = () => {
               className="w-full h-[40px] text-white text-xl  font-medium font-thicccboi"
               href="https://tradingapp.gitbook.io/tradingapp/"
             >
-              Learn
+              Kursy
             </a>
             <Link
               className="w-full h-[40px] text-white text-xl font-medium font-thicccboi"
               to="/price"
             >
-              Price
+              Cennik
             </Link>
             <Link
               className="w-full h-[40px] blur-[2px] text-white text-xl font-medium font-thicccboi"
               to="/"
             >
-              Team
+              Zespół
             </Link>
             <a
               className="w-full h-[40px] text-white text-xl font-medium font-thicccboi"

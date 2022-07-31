@@ -25,20 +25,20 @@ export const Price: FC = () => {
 
   return (
     <div className="w-full h-[900px] flex flex-col justify-center items-center gap-20">
-      <div className="w-[400px] h-[500px] sm:w-[400px] sm:h-[500px] bg-white rounded-lg flex flex-col items-center">
+      <div className="w-[340px] h-[500px] sm:w-[400px] sm:h-[500px] bg-white rounded-lg flex flex-col items-center">
         <h2 className="text-4xl font-medium font-thicccboi mt-10">Premium</h2>
         <p className="text-lg text-[#898CA9] font-normal font-thicccboi mt-10">
-          One price, zero restrictions.
+          Jedna cena, zero ograniczeń.
         </p>
         <ul className="flex flex-col mt-3 gap-2">
           <li className="flex items-center gap-2 text-sm text-[#898CA9] font-normal font-thicccboi">
             <AiOutlineCheck /> Premium Trading Bot
           </li>
           <li className="flex items-center gap-2 text-sm text-[#898CA9] font-normal font-thicccboi">
-            <AiOutlineCheck /> Closed Community
+            <AiOutlineCheck /> Zamknięta społeczność
           </li>
           <li className="flex items-center gap-2 text-sm text-[#898CA9] font-normal font-thicccboi">
-            <AiOutlineCheck /> 24h/7 Support
+            <AiOutlineCheck /> Wsparcie
           </li>
         </ul>
         {productPrice && (
