@@ -28,11 +28,11 @@ export const Login: FC = () => {
             type="text"
             name="password"
             className="w-full px-7 rounded-md font-thicccboi text-lg py-4"
-            placeholder="Password"
+            placeholder="Hasło"
           />
           <button
             type="submit"
-            className="block w-full px-7 rounded-md font-thicccboi text-lg py-4 bg-gradient-to-r from-red-500 to-blue-500 text-white"
+            className="w-full px-7 rounded-md font-thicccboi text-lg py-4 bg-gradient-to-r from-red-500 to-blue-500 text-white"
           >
             Zaloguj się
           </button>
