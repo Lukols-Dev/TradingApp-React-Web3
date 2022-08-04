@@ -24,7 +24,7 @@ export const HeroSection: FC = () => {
 
   return (
     <section className="flex flex-col w-full h-[850px] sm:h-[1100px] items-center">
-      <h1 className="text-3xl w-[300px] sm:text-5xl sm:w-[500px] xl:text-7xl xl:w-[780px] text-white font-black font-thicccboi mt-32  text-center ">
+      <h1 className="text-3xl w-[300px] sm:text-5xl sm:w-[500px] xl:text-7xl xl:w-[780px] text-white font-black font-thicccboi mt-32  text-center">
         Najlepsza aplikacja tradingowa AI
       </h1>
       <p className="text-[12px] sm:text-xs	text-center mt-4 xl:text-base text-[#898CA9] font-normal font-thicccboi w-[300px] sm:w-[700px]">
