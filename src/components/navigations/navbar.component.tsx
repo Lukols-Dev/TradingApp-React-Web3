@@ -25,11 +25,11 @@ export const NavBar: FC = () => {
               className="text-white text-xl font-medium font-thicccboi"
               href="https://tradingapp.gitbook.io/tradingapp/"
             >
-              Kursy
+              Materiały
             </a>
             <Link
-              className="text-white text-xl  font-medium font-thicccboi"
-              to="/price"
+              className="blur-[2px] text-white text-xl  font-medium font-thicccboi"
+              to="/"
             >
               Cennik
             </Link>
@@ -41,7 +41,7 @@ export const NavBar: FC = () => {
             </Link>
             <a
               className=" text-white text-xl  font-medium font-thicccboi"
-              href="https://discord.gg/QtgsbeCf"
+              href="https://discord.gg/eZKFX3skvh"
             >
               Discord
             </a>
@@ -69,11 +69,11 @@ export const NavBar: FC = () => {
               className="w-full h-[40px] text-white text-xl  font-medium font-thicccboi"
               href="https://tradingapp.gitbook.io/tradingapp/"
             >
-              Kursy
+              Materiały
             </a>
             <Link
-              className="w-full h-[40px] text-white text-xl font-medium font-thicccboi"
-              to="/price"
+              className="blur-[2px] w-full h-[40px] text-white text-xl font-medium font-thicccboi"
+              to="/"
             >
               Cennik
             </Link>
@@ -85,7 +85,7 @@ export const NavBar: FC = () => {
             </Link>
             <a
               className="w-full h-[40px] text-white text-xl font-medium font-thicccboi"
-              href="https://discord.gg/QtgsbeCf"
+              href="https://discord.gg/eZKFX3skvh"
             >
               Discord
             </a>

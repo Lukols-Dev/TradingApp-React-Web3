@@ -24,33 +24,42 @@ export const Price: FC = () => {
   }, []);
 
   return (
-    <div className="w-full h-[900px] flex flex-col justify-center items-center gap-20">
-      <div className="w-[340px] h-[500px] sm:w-[400px] sm:h-[500px] bg-white rounded-lg flex flex-col items-center">
-        <h2 className="text-4xl font-medium font-thicccboi mt-10">Premium</h2>
+    <div className="w-full h-[1000px] flex flex-col justify-center items-center">
+      <h1 className="text-2xl w-[300px] sm:text-4xl sm:w-[500px] xl:text-6xl xl:w-[650px] text-white font-bold font-thicccboi mt-22 text-center">
+        Skorzystaj z oferty specjalnej
+      </h1>
+      <p className="text-[#898CA9] text-lg sm:text-2xl font-normal font-thicccbo w-[300px] sm:w-[800px] mt-4 sm:text-center">
+        Cena pakietu będzie wzrastać wraz z ilością użytkowników - utrzymując
+        nieprzerwanie subskrypcję masz gwarancję obecnej ceny.
+      </p>
+      <div className="w-[340px] h-[500px] sm:w-[400px] sm:h-[500px] bg-white rounded-lg flex flex-col items-center mt-10">
+        <h2 className="text-5xl font-medium font-thicccboi mt-10">Premium</h2>
         <p className="text-lg text-[#898CA9] font-normal font-thicccboi mt-10">
           Jedna cena, zero ograniczeń.
         </p>
         <ul className="flex flex-col mt-3 gap-2">
-          <li className="flex items-center gap-2 text-sm text-[#898CA9] font-normal font-thicccboi">
-            <AiOutlineCheck /> Premium Trading Bot
+          <li className="flex items-center gap-2 text-lg text-[#898CA9] font-normal font-thicccboi">
+            <AiOutlineCheck />
+            Pełny dostęp do aplikacji TradingApp
           </li>
-          <li className="flex items-center gap-2 text-sm text-[#898CA9] font-normal font-thicccboi">
-            <AiOutlineCheck /> Zamknięta społeczność
+          <li className="flex items-center gap-2 text-lg text-[#898CA9] font-normal font-thicccboi">
+            <AiOutlineCheck />
+            Zamknięta społeczność
           </li>
-          <li className="flex items-center gap-2 text-sm text-[#898CA9] font-normal font-thicccboi">
-            <AiOutlineCheck /> Wsparcie
+          <li className="flex items-center gap-2 text-lg text-[#898CA9] font-normal font-thicccboi">
+            <AiOutlineCheck /> Wsparcie techniczne
           </li>
         </ul>
         {productPrice && (
           <div className="flex relative mt-0">
-            <p className="text-8xl text-black font-thicccboi mt-10">
+            <p className="text-7xl text-black font-thicccboi mt-10">
               {productPrice.unit_amount / 100}
             </p>
-            <span className="absolute top-[40px] left-[-40px] text-2xl text-black font-thicccboi">
-              {productPrice.currency}
+            <span className="absolute top-[40px] left-[-50px] text-2xl text-black font-thicccboi">
+              {productPrice.currency.toUpperCase()}
             </span>
-            <span className="absolute bottom-[10px] right-[-40px] text-2xl text-black font-thicccboi">
-              /mo
+            <span className="absolute bottom-[0px] right-[-50px] text-2xl text-black font-thicccboi">
+              /msc
             </span>
           </div>
         )}

@@ -3,77 +3,73 @@ import { FC } from "react";
 import galaxyLogin from "../../../assets/phones/galaxy-login.svg";
 import galaxySignal from "../../../assets/phones/galaxy-signal.svg";
 import galaxyBuy from "../../../assets/phones/galaxy-buy.svg";
-import galaxyCoins from "../../../assets/phones/galaxy-coins.svg";
+import galaxyMonitoring from "../../../assets/phones/galaxy-monitoring.svg";
 
 export const AboutAppSection: FC = () => {
   return (
-    <section className="flex flex-col w-full h-[2500px] sm:h-[2300px] gap-x-12 items-center z-10">
-      <h1 className="text-4xl w-[340px] sm:text-5xl sm:w-[500px] xl:text-6xl xl:w-[780px] text-white font-bold font-thicccboi mt-32  text-center ">
-        Jak zacząć trading z TradingApp?
+    <section className="flex flex-col w-full h-[2600px] sm:h-[2500px] gap-x-12 items-center z-10">
+      <h1 className="text-2xl w-[300px] sm:text-5xl sm:w-[500px] xl:text-6xl xl:w-[650px] text-white font-bold font-thicccboi mt-32  text-center">
+        Jak zacząć korzystać z aplikacji?
       </h1>
-      <div className="flex gap-[100px] justify-between mt-[50px] sm:mt-[125px] flex-col-reverse sm:flex-row">
-        <img
-          src={galaxyLogin}
-          className="h-auto w-[500px] z-20 mt-[20px] sm:mt-0"
-          alt="phone"
-        />
-        <div className="flex flex-col mt-24">
+      <p className="text-[#898CA9] text-lg sm:text-2xl font-normal font-thicccbo w-[300px] sm:w-[800px] mt-7 sm:text-center">
+        Zapoznaj się z materiałami szkoleniowymi. <br /> Materiały szkoleniowe
+        zostały przygotowane tak, aby użytkownik dokładnie poznał aplikację i
+        potrafił ją odpowiednio skonfigurować.
+      </p>
+      <div className="flex gap-8 sm:gap-[100px] justify-between mt-[50px] sm:mt-[125px] flex-col-reverse sm:flex-row">
+        <img src={galaxyLogin} className="h-auto w-[500px] z-20 " alt="phone" />
+        <div className="flex flex-col mt-10 sm:mt-24">
           <h2 className="text-white text-xl sm:text-4xl font-black font-thicccbo">
-            1. Zaloguj się/Pobierz aplikację
+            1. Zarejestruj konto w aplikacji
           </h2>
           <p className="text-[#898CA9] text-lg sm:text-2xl font-normal font-thicccbo w-[300px] sm:w-[600px] mt-7">
-            Pobierz aplikację, załóż konto i połącz je z Binance exchange
-            poprzez wprowadzenie odpowiednich kluczy.
+            Pobierz aplikację, zarejestruj konto w naszym systemie, a następnie
+            za pomocą kluczy API połącz je z największą giełdą kryptowalutową -
+            Binance.
           </p>
         </div>
       </div>
-      <div className="flex flex-col-reverse sm:flex-row-reverse gap-[100px] justify-between">
+      <div className="flex flex-col-reverse sm:flex-row-reverse gap-8 sm:gap-[100px] justify-between">
+        <img src={galaxySignal} className="h-auto w-[500px] z-20" alt="phone" />
+        <div className="flex flex-col sm:mt-24">
+          <h2 className="text-white text-xl sm:text-4xl font-black font-thicccbo">
+            2. Dostosuj ustawienia do swoich potrzeb
+          </h2>
+          <p className="text-[#898CA9] text-lg sm:text-2xl font-normal font-thicccbo w-[300px] sm:w-[600px] mt-7">
+            Ustaw m.in. wartość spodziewanego zysku z rozgrywanej pozycji,
+            procent inwestycji jaki może być przeznaczony na realizację
+            zlecenia, czy też ilość obsługiwanych sygnałów w danym czasie.
+          </p>
+        </div>
+      </div>
+      <div className="flex gap-8 sm:gap-[100px] justify-between flex-col-reverse sm:flex-row">
+        <img src={galaxyBuy} className="h-auto w-[500px] z-20" alt="phone" />
+        <div className="flex flex-col sm:mt-24">
+          <h2 className="text-white text-xl sm:text-4xl font-black font-thicccbo">
+            3. Automatyczne rozgrywanie pozycji
+          </h2>
+          <p className="text-[#898CA9] text-lg sm:text-2xl font-normal font-thicccbo w-[300px] sm:w-[600px] mt-7">
+            Po odpowiednim dostosowaniu ustawień. Uruchom możliwość
+            automatycznego handlu walutami. Sztuczna inteligencja zaczynie
+            przeprowadzać zaawansowane analizy danych giełdowych.
+          </p>
+        </div>
+      </div>
+      <div className="flex flex-col-reverse sm:flex-row-reverse gap-8 sm:gap-[100px] justify-between">
         <img
-          src={galaxySignal}
-          className="h-auto w-[500px] z-20 mt-[20px] sm:mt-0"
+          src={galaxyMonitoring}
+          className="h-auto w-[500px] z-20"
           alt="phone"
         />
         <div className="flex flex-col sm:mt-24">
           <h2 className="text-white text-xl sm:text-4xl font-black font-thicccbo">
-            2. Poczekaj na sygnały
+            4. Monitoring pozycji
           </h2>
           <p className="text-[#898CA9] text-lg sm:text-2xl font-normal font-thicccbo w-[300px] sm:w-[600px] mt-7">
-            Sztuczna inteligencja zaczyna przeprowadzać zaawansowane analizy
-            danych giełdowych danych rynkowych, aby wyświetlić najlepsze
-            sygnały.
-          </p>
-        </div>
-      </div>
-      <div className="flex gap-[100px] justify-between flex-col-reverse sm:flex-row">
-        <img
-          src={galaxyBuy}
-          className="h-auto w-[500px] z-20 mt-[20px] sm:mt-0"
-          alt="phone"
-        />
-        <div className="flex flex-col sm:mt-24">
-          <h2 className="text-white text-xl sm:text-4xl font-black font-thicccbo">
-            3. Kup
-          </h2>
-          <p className="text-[#898CA9] text-lg sm:text-2xl font-normal font-thicccbo w-[300px] sm:w-[600px] mt-7">
-            Sztuczna inteligencja będzie czekać na idealny moment do zakupu i
-            zaprezentować efekty tej gry.
-          </p>
-        </div>
-      </div>
-      <div className="flex flex-col-reverse sm:flex-row-reverse sm:gap-[270px] items-center justify-between sm:bottom-[200px] relative">
-        <img
-          src={galaxyCoins}
-          className="h-auto w-[200px] sm:w-[270px] z-20"
-          alt="phone"
-        />
-        <div className="hidden xl:inline absolute right-[0px] top-[200px] bg-[#FCD434]/[.2] blur-[100px] w-[300px] h-[300px] z-10"></div>
-        <div className="flex flex-col sm:mt-24">
-          <h2 className="text-white text-xl sm:text-4xl font-black font-thicccbo">
-            4. Sprzedaj
-          </h2>
-          <p className="text-[#898CA9] text-lg sm:text-2xl font-normal font-thicccbo w-[300px] sm:w-[600px] mt-7">
-            Sprzedaż zautomatyzowana, a może ręczna. Ty decydujesz, jakiego
-            rodzaju zysku oczekujesz.
+            Dane zlecenie będzie stale monitorowane przez aplikację, celem
+            odpowiedniego zamknięcia pozycji. Jeśli uznasz, że Twój zysk jest
+            wystarczający - z poziomu aplikacji masz możliwość wcześniejszego
+            zamknięcia zlecenia.
           </p>
         </div>
       </div>

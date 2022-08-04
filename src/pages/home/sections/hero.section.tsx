@@ -27,9 +27,10 @@ export const HeroSection: FC = () => {
       <h1 className="text-3xl w-[300px] sm:text-5xl sm:w-[500px] xl:text-7xl xl:w-[780px] text-white font-black font-thicccboi mt-32  text-center ">
         Najlepsza aplikacja tradingowa AI
       </h1>
-      <p className="text-[12px] sm:text-xs	text-center mt-4 xl:text-base text-[#898CA9] font-normal font-thicccboi w-[300px] sm:w-[500px]">
-        Kupuj i sprzedawaj z TradingApp. Aplikacja wspierająca każdego na każdym
-        poziomie.
+      <p className="text-[12px] sm:text-xs	text-center mt-4 xl:text-base text-[#898CA9] font-normal font-thicccboi w-[300px] sm:w-[700px]">
+        Kupuj i sprzedawaj z TradingApp – aplikacją opartą o sztuczną
+        inteligencję. Jest to narzędzie wspomagające handel. Dzięki niemu,
+        użytkownik może automatycznie rozgrywać pozycje.
       </p>
       <div className="flex mt-9 gap-5 ">
         <button

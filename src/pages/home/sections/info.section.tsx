@@ -27,8 +27,9 @@ export const InfoSection: FC = () => {
           Pełna kontrola
         </p>
         <p className="text-white/[.6] text-sm text-center font-normal font-thicccboi mt-3.5 w-[300px] sm:text-base">
-          Masz pełną kontrolę. Możesz dostosować TradingApp idealnie do swoich
-          potrzeb.
+          Masz pełną kontrolę.
+          <br />
+          Możesz dostosować narzędzie TradingApp idealnie do swoich potrzeb.
         </p>
       </div>
       <div className="w-[340px] h-[300px] flex flex-col items-center justify-center bg-[#1A1B23] rounded-xl z-10 sm:w-[440px] sm:h-[250px]">
@@ -39,9 +40,10 @@ export const InfoSection: FC = () => {
           Zaawansowana analityka
         </p>
         <p className="text-white/[.6] text-sm text-center font-normal font-thicccboi mt-3.5 w-[300px] sm:text-base">
-          TradingApp opierta jest na 11 najbardziej znanych wskaźnikach. Ceny
-          kupna i sprzedaży są obliczane przez wartość Fibonacciego
-          indywidualnie dla każdej waluty.
+          Sygnały bazują na 11 wskaźnikach.
+          <br />
+          Cena zakupu oraz sprzedaży dobrana jest na podstawie poziomów
+          Fibonnacciego.
         </p>
       </div>
     </section>
