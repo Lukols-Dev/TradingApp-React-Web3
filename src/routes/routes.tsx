@@ -4,6 +4,7 @@ import { BaseLayout } from "../components/layouts";
 import { LoginRegisterLayout } from "../components/layouts/login-register-layout";
 import { Home, PaymentCheckout, Price } from "../pages";
 import { Login } from "../pages/login/login.page";
+import { FormRoute } from "./formRoute";
 
 export const BaseRoutes: FC = () => {
   return (
@@ -11,7 +12,9 @@ export const BaseRoutes: FC = () => {
       <Routes>
         <Route element={<BaseLayout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/price" element={<Price />} />
+          <Route element={<FormRoute />}>
+            <Route path="/price" element={<Price />} />
+          </Route>
           <Route path="/checkout" element={<PaymentCheckout />} />
         </Route>
         <Route element={<LoginRegisterLayout />}>

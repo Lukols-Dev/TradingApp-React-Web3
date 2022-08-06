@@ -1,20 +1,12 @@
-import { FC, ReactElement, useState } from "react";
+import { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { Popup } from "../common/popups/popup.common";
 
 export const NavBar: FC = () => {
   const [hiddenMenu, setHiddenMenu] = useState<boolean>(false);
-  const [popup, setPopup] = useState<ReactElement | null>(null);
 
   const showMobileMenu = () => {
     setHiddenMenu((prev) => !prev);
-  };
-
-  const closePopup = () => setPopup(null);
-
-  const checkAccesPrice = () => {
-    return setPopup(<Popup close={closePopup}></Popup>);
   };
 
   return (
@@ -35,12 +27,12 @@ export const NavBar: FC = () => {
             >
               Materiały
             </a>
-            <p
+            <Link
+              to="/price"
               className="text-white text-xl font-medium font-thicccboi"
-              onClick={checkAccesPrice}
             >
               Cennik
-            </p>
+            </Link>
             <Link
               className=" blur-[2px] text-white text-xl font-medium font-thicccboi"
               to="/"
@@ -79,12 +71,12 @@ export const NavBar: FC = () => {
             >
               Materiały
             </a>
-            <p
+            <Link
+              to="/price"
               className="text-white text-xl font-medium font-thicccboi"
-              onClick={checkAccesPrice}
             >
               Cennik
-            </p>
+            </Link>
             <Link
               className="w-full h-[40px] blur-[2px] text-white text-xl font-medium font-thicccboi"
               to="/"
@@ -100,7 +92,6 @@ export const NavBar: FC = () => {
           </nav>
         </div>
       )}
-      {popup ? popup : null}
     </>
   );
 };
