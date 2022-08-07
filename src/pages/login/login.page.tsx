@@ -1,7 +1,25 @@
-import { FC } from "react";
-import { Link } from "react-router-dom";
+import { ChangeEvent, FC, useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext, UserAccount } from "../../context/auth.context";
 
 export const Login: FC = () => {
+  const { logIn } = useContext(AuthContext) as UserAccount;
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
+  const handleLogin = async () => {
+    try {
+      await logIn(email, password);
+      navigate("/dashboard");
+    } catch (error) {
+      console.log(error);
+    }
+    setEmail("");
+    setPassword("");
+  };
+
   return (
     <section className="w-full h-screen  flex justify-center items-center">
       <div className="flex flex-col w-[500px]">
@@ -17,26 +35,35 @@ export const Login: FC = () => {
             Zarejestruj się
           </Link>
         </div>
-        <form className="mt-20 gap-8 flex flex-col w-full">
+        <div className="mt-20 gap-8 flex flex-col w-full">
           <input
             type="text"
             name="email"
             className="w-full px-7 rounded-md font-thicccboi text-lg py-4"
             placeholder="E-mail"
+            value={email}
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              setEmail(e.target.value)
+            }
           />
           <input
-            type="text"
+            type="password"
             name="password"
             className="w-full px-7 rounded-md font-thicccboi text-lg py-4"
             placeholder="Hasło"
+            value={password}
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              setPassword(e.target.value)
+            }
           />
           <button
-            type="submit"
+            type="button"
             className="w-full px-7 rounded-md font-thicccboi text-lg py-4 bg-gradient-to-r from-red-500 to-blue-500 text-white"
+            onClick={handleLogin}
           >
             Zaloguj się
           </button>
-        </form>
+        </div>
       </div>
     </section>
   );

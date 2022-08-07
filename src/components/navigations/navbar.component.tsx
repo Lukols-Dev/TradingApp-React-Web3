@@ -47,9 +47,12 @@ export const NavBar: FC = () => {
             </a>
           </nav>
           <div className="hidden xl:flex gap-5">
-            <p className=" blur-[2px] cursor-pointer text-white text-base  font-medium font-thicccboi border-[1px] border-solid border-white rounded-lg py-2 px-3">
+            <Link
+              to="/login"
+              className="cursor-pointer text-white text-base  font-medium font-thicccboi border-[1px] border-solid border-white rounded-lg py-2 px-3"
+            >
               Zaloguj się
-            </p>
+            </Link>
             <p className=" blur-[2px] cursor-pointer text-white text-base  font-medium font-thicccboi rounded-lg py-2 px-3 bg-gradient-to-r from-red-500 to-blue-500">
               Zarejestruj się
             </p>

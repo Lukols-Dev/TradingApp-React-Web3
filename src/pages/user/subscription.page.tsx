@@ -1,8 +1,11 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import { AiOutlineCheck } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { AuthContext, UserAccount } from "../../context/auth.context";
 
 export const Subscription: FC = () => {
+  const { logOut } = useContext(AuthContext) as UserAccount;
+
   return (
     <div>
       <header className="w-full h-20 flex bg-[#0B0B0F] fixed z-20">
@@ -14,9 +17,13 @@ export const Subscription: FC = () => {
             <img alt="logo" src="logo.svg" />
             TradingApp
           </Link>
-          <p className="cursor-pointer text-white text-base  font-medium font-thicccboi rounded-lg py-2 px-3 bg-gradient-to-r from-red-500 to-blue-500">
+          <button
+            type="button"
+            className="cursor-pointer text-white text-base  font-medium font-thicccboi rounded-lg py-2 px-3 bg-gradient-to-r from-red-500 to-blue-500"
+            onClick={logOut}
+          >
             Wyloguj się
-          </p>
+          </button>
         </div>
       </header>
       <main>
