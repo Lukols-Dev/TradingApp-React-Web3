@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useState } from "react";
+import React, { ChangeEvent, FC, useState } from "react";
 import { Outlet } from "react-router-dom";
 
 import { Popup } from "../components/common/popups/popup.common";
@@ -25,13 +25,25 @@ export const FormRoute: FC = () => {
     }
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Enter") {
+      checkAccess();
+      e.preventDefault();
+    }
+  };
+
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
     console.log(e.target.value);
   };
 
   return !access ? (
-    <Popup value={value} onChange={onChange} getAccess={checkAccess}></Popup>
+    <Popup
+      value={value}
+      onChange={onChange}
+      getAccess={checkAccess}
+      keyDown={handleKeyDown}
+    ></Popup>
   ) : (
     <Outlet />
   );

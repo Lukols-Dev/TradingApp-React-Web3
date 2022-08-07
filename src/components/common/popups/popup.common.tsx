@@ -4,10 +4,16 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 interface PopupProps {
   value?: string;
   getAccess?: () => void;
+  keyDown?: (e: React.KeyboardEvent<HTMLDivElement>) => void;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const Popup: FC<PopupProps> = ({ onChange, getAccess, value }) => {
+export const Popup: FC<PopupProps> = ({
+  onChange,
+  getAccess,
+  keyDown,
+  value,
+}) => {
   return (
     <div className="w-screen h-screen flex fixed z-10 items-center justify-center top-0 left-0">
       <div className="w-full h-full fixed"></div>
@@ -22,6 +28,7 @@ export const Popup: FC<PopupProps> = ({ onChange, getAccess, value }) => {
             placeholder="Kod dostępu"
             value={value}
             onChange={onChange}
+            onKeyDown={keyDown}
           />
           <button
             onClick={getAccess}
