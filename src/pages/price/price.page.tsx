@@ -1,6 +1,7 @@
 import { FC, useEffect, useState } from "react";
 
 import { AiOutlineCheck } from "react-icons/ai";
+import { CheckoutForm } from "../../components/subscription";
 import { UserSubscriptionService } from "../../services/user-subscription.service";
 import { ProductPrice } from "../../types/stripe.types";
 
@@ -9,7 +10,7 @@ export const Price: FC = () => {
 
   const getProduct = async () => {
     const resp = await UserSubscriptionService.getProductID(
-      `${process.env.REACT_APP_STRIPE_PRODUCT}`
+      `${process.env.REACT_APP_STRIPE_PRODUCT_TEST}`
     );
     if (resp) {
       const respPrice = await UserSubscriptionService.getProductPriceID(
@@ -63,13 +64,7 @@ export const Price: FC = () => {
             </span>
           </div>
         )}
-
-        <a
-          href="https://buy.stripe.com/9AQbJ77YKcIz2xW8ww"
-          className="mt-10 rounded-lg bg-[blue] px-8 py-3 text-white font-thicccboi font-medium"
-        >
-          Subskrybuj
-        </a>
+        <CheckoutForm />
       </div>
     </div>
   );

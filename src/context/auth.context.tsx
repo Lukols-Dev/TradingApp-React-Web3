@@ -5,9 +5,10 @@ import {
 } from "firebase/auth";
 import { createContext, FC, useEffect, useState } from "react";
 import { firebaseAuth } from "../config/firebase";
+import { User } from "../types/user.types";
 
 export type UserAccount = {
-  user: any;
+  user: User;
   logIn: (email: string, password: string) => void;
   logOut: () => void;
 };
@@ -33,7 +34,6 @@ export const UserAuthContextProvider: FC<UserAuthContextProviderProps> = ({
   };
   //
   const unsubscribe = onAuthStateChanged(firebaseAuth, (currentUser) => {
-    console.log("Auth", currentUser);
     setUser(currentUser);
   });
 

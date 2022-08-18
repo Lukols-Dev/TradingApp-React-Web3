@@ -1,10 +1,75 @@
-import { FC, useContext } from "react";
+import { FC, useCallback, useContext, useEffect, useState } from "react";
 import { AiOutlineCheck } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { CheckoutForm } from "../../components/subscription";
 import { AuthContext, UserAccount } from "../../context/auth.context";
+import { UserDataService } from "../../services/user-data.service";
+import { UserSubscriptionService } from "../../services/user-subscription.service";
+import { ICustomer, ISubscription } from "../../types/stripe.types";
 
 export const Subscription: FC = () => {
-  const { logOut } = useContext(AuthContext) as UserAccount;
+  const { logOut, user } = useContext(AuthContext) as UserAccount;
+  const [subscription, setSubscritpion] = useState<ISubscription[]>([]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [customers, setCustomers] = useState<ICustomer[]>([]);
+  // const [currUser, setCurrUser] = useState<any>();
+
+  const getSubscriptionData = useCallback(async () => {
+    try {
+      const allCustomers = await UserSubscriptionService.getAllCustomers();
+      const allSubscriptions =
+        await UserSubscriptionService.getAllSubscription();
+
+      setCustomers(allCustomers.data);
+      setSubscritpion(allSubscriptions.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
+  const deleteSubscription = async () => {
+    try {
+      const accountData = await UserDataService.getUserDataID(user.uid);
+      await UserSubscriptionService.deleteSubscription(
+        accountData.data()?.subscriptionID
+      );
+      await UserDataService.setSubscriptionID(`${user.uid}`, ``);
+      localStorage.removeItem("sub");
+      setSubscritpion([]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getSubscriptionData();
+  }, [getSubscriptionData]);
+
+  useEffect(() => {
+    const getSubscriptionDataToDB = () => {
+      customers.map((item) => {
+        return (
+          item.email === user.email && [
+            UserDataService.seCustomerID(`${user.uid}`, `${item.id}`),
+            localStorage.setItem("cus", item.id),
+          ]
+        );
+      });
+
+      subscription.map((item) => {
+        return (
+          item.customer === localStorage.getItem("cus") && [
+            UserDataService.setSubscriptionID(`${user.uid}`, `${item.id}`),
+            localStorage.setItem("sub", item.id),
+          ]
+        );
+      });
+    };
+
+    getSubscriptionDataToDB();
+  }, [customers, subscription, user.email, user.uid]);
+
+  if (!user) return null;
 
   return (
     <div>
@@ -40,13 +105,9 @@ export const Subscription: FC = () => {
             </p>
             <ul className="flex flex-col mt-3 gap-2">
               <li className="flex items-center gap-2 text-lg text-[#898CA9] font-normal font-thicccboi">
-                <AiOutlineCheck />
-                Pełny dostęp do aplikacji TradingApp
+                - Status: active
               </li>
-              <li className="flex items-center gap-2 text-lg text-[#898CA9] font-normal font-thicccboi">
-                <AiOutlineCheck />
-                Zamknięta społeczność
-              </li>
+              <li className="flex items-center gap-2 text-lg text-[#898CA9] font-normal font-thicccboi"></li>
               <li className="flex items-center gap-2 text-lg text-[#898CA9] font-normal font-thicccboi">
                 <AiOutlineCheck /> Wsparcie techniczne
               </li>
@@ -60,12 +121,16 @@ export const Subscription: FC = () => {
                 /msc
               </span>
             </div>
-            <a
-              href="https://buy.stripe.com/9AQbJ77YKcIz2xW8ww"
-              className="mt-10 rounded-lg bg-[blue] px-8 py-3 text-white font-thicccboi font-medium"
-            >
-              Anuluj Subskrypcję
-            </a>
+            {localStorage.getItem("sub") !== null ? (
+              <button
+                className="mt-10 rounded-lg bg-[blue] px-8 py-3 text-white font-thicccboi font-medium"
+                onClick={deleteSubscription}
+              >
+                Anuluj Subskrypcję
+              </button>
+            ) : (
+              <CheckoutForm />
+            )}
           </div>
         </div>
       </main>

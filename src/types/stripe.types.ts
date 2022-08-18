@@ -28,3 +28,29 @@ export interface ProductPrice {
   unit_amount: number;
   unit_amount_decimal: string;
 }
+
+export interface Subscription {
+  id: string;
+  object: string;
+  canceled_at: number;
+  created: number;
+  current_period_end: number;
+  current_period_start: number;
+  customer: string;
+  status: string;
+}
+export interface ISubscription {
+  id: string;
+  object: string;
+  canceled_at: number;
+  created: number;
+  current_period_end: number;
+  current_period_start: number;
+  customer: string;
+  status: string;
+}
+
+export interface ICustomer {
+  email: string;
+  id: string;
+}

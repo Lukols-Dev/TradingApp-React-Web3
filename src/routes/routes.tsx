@@ -2,6 +2,7 @@ import { FC } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { BaseLayout } from "../components/layouts";
 import { LoginRegisterLayout } from "../components/layouts/login-register-layout";
+import { CheckoutForm } from "../components/subscription";
 import { UserAuthContextProvider } from "../context/auth.context";
 import { Home, PaymentCheckout, Price, Subscription } from "../pages";
 import { Login } from "../pages/login/login.page";
@@ -13,6 +14,7 @@ export const BaseRoutes: FC = () => {
     <UserAuthContextProvider>
       <BrowserRouter>
         <Routes>
+          <Route path="/test" element={<CheckoutForm />} />
           <Route element={<BaseLayout />}>
             <Route path="/" element={<Home />} />
             <Route element={<FormRoute />}>
