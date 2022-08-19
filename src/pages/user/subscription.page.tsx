@@ -1,7 +1,5 @@
 import { FC, useCallback, useContext, useEffect, useState } from "react";
-import { AiOutlineCheck } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { CheckoutForm } from "../../components/subscription";
 import { AuthContext, UserAccount } from "../../context/auth.context";
 import { UserDataService } from "../../services/user-data.service";
 import { UserSubscriptionService } from "../../services/user-subscription.service";
@@ -10,9 +8,7 @@ import { ICustomer, ISubscription } from "../../types/stripe.types";
 export const Subscription: FC = () => {
   const { logOut, user } = useContext(AuthContext) as UserAccount;
   const [subscription, setSubscritpion] = useState<ISubscription[]>([]);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [customers, setCustomers] = useState<ICustomer[]>([]);
-  // const [currUser, setCurrUser] = useState<any>();
 
   const getSubscriptionData = useCallback(async () => {
     try {
@@ -28,13 +24,18 @@ export const Subscription: FC = () => {
   }, []);
 
   const deleteSubscription = async () => {
+    const keysToRemove = ["sub", "cus"];
     try {
       const accountData = await UserDataService.getUserDataID(user.uid);
       await UserSubscriptionService.deleteSubscription(
         accountData.data()?.subscriptionID
       );
-      await UserDataService.setSubscriptionID(`${user.uid}`, ``);
-      localStorage.removeItem("sub");
+      await UserSubscriptionService.deleteCustomer(
+        accountData.data()?.customerID
+      );
+      await UserDataService.deleteSubscription(user.uid);
+      keysToRemove.forEach((k) => localStorage.removeItem(k));
+
       setSubscritpion([]);
     } catch (error) {
       console.log(error);
@@ -96,40 +97,55 @@ export const Subscription: FC = () => {
           <h1 className="text-2xl w-[300px] sm:text-4xl sm:w-[500px] xl:text-6xl xl:w-[650px] text-white font-bold font-thicccboi mt-22 text-center">
             Informacje o Twojej subskrybcji
           </h1>
-          <div className="w-[340px] h-[500px] sm:w-[400px] sm:h-[500px] bg-white rounded-lg flex flex-col items-center mt-10">
+          <div className="w-[340px] h-[500px] sm:w-[400px] sm:h-[500px] bg-white rounded-lg flex flex-col items-center mt-10 relative">
             <h2 className="text-5xl font-medium font-thicccboi mt-10">
               Premium
             </h2>
-            <p className="text-lg text-[#898CA9] font-normal font-thicccboi mt-10">
-              Jedna cena, zero ograniczeń.
-            </p>
-            <ul className="flex flex-col mt-3 gap-2">
-              <li className="flex items-center gap-2 text-lg text-[#898CA9] font-normal font-thicccboi">
-                - Status: active
-              </li>
-              <li className="flex items-center gap-2 text-lg text-[#898CA9] font-normal font-thicccboi"></li>
-              <li className="flex items-center gap-2 text-lg text-[#898CA9] font-normal font-thicccboi">
-                <AiOutlineCheck /> Wsparcie techniczne
-              </li>
+            <ul className="flex flex-col mt-10 gap-2">
+              {subscription.map((item) => {
+                console.log(item);
+
+                return (
+                  item.customer === localStorage.getItem("cus") && (
+                    <>
+                      <li className="flex items-center gap-2 text-lg text-[#898CA9] font-normal font-thicccboi">
+                        - Status:
+                        <span className="bg-[green] p-2 rounded-lg text-white">
+                          {item.status}
+                        </span>
+                      </li>
+                      <li className="flex items-center gap-2 text-lg text-[#898CA9] font-normal font-thicccboi">
+                        - Start subskrypcji:{" "}
+                        {new Date(item.start_date * 1000).toLocaleString()}
+                      </li>
+                      <li className="flex items-center gap-2 text-lg text-[#898CA9] font-normal font-thicccboi">
+                        - Kolejna płatność:{" "}
+                        {new Date(
+                          item.current_period_end * 1000
+                        ).toLocaleString()}
+                      </li>
+                      <li className="flex items-center gap-2 text-lg text-[#898CA9] font-normal font-thicccboi">
+                        - Cena: {item.plan.amount / 100} pln/msc
+                      </li>
+                    </>
+                  )
+                );
+              })}
             </ul>
-            <div className="flex relative mt-0">
-              <p className="text-7xl text-black font-thicccboi mt-10">19.99</p>
-              <span className="absolute top-[40px] left-[-50px] text-2xl text-black font-thicccboi">
-                PLN
-              </span>
-              <span className="absolute bottom-[0px] right-[-50px] text-2xl text-black font-thicccboi">
-                /msc
-              </span>
-            </div>
             {localStorage.getItem("sub") !== null ? (
               <button
-                className="mt-10 rounded-lg bg-[blue] px-8 py-3 text-white font-thicccboi font-medium"
+                className="mb-10 rounded-lg bg-[blue] px-8 py-3 text-white font-thicccboi font-medium absolute bottom-0"
                 onClick={deleteSubscription}
               >
                 Anuluj Subskrypcję
               </button>
             ) : (
-              <CheckoutForm />
+              <Link
+                className="mt-10 rounded-lg bg-[blue] px-8 py-3 text-white font-thicccboi font-medium"
+                to="/price"
+              >
+                Subskrybuj
+              </Link>
             )}
           </div>
         </div>

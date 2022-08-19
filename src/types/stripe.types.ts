@@ -46,8 +46,14 @@ export interface ISubscription {
   created: number;
   current_period_end: number;
   current_period_start: number;
+  start_date: number;
   customer: string;
   status: string;
+  plan: {
+    amount: number;
+    interval: string;
+    currency: string;
+  };
 }
 
 export interface ICustomer {

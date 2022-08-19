@@ -30,6 +30,8 @@ export const UserAuthContextProvider: FC<UserAuthContextProviderProps> = ({
   };
   // Log Out function
   const logOut = () => {
+    const keysToRemove = ["sub", "cus"];
+    keysToRemove.forEach((k) => localStorage.removeItem(k));
     return signOut(firebaseAuth);
   };
   //

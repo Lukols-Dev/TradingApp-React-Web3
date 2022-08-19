@@ -1,8 +1,11 @@
-import { FC, useState } from "react";
+import { FC, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { FaUser } from "react-icons/fa";
+import { AuthContext, UserAccount } from "../../context/auth.context";
 
 export const NavBar: FC = () => {
+  const { user } = useContext(AuthContext) as UserAccount;
   const [hiddenMenu, setHiddenMenu] = useState<boolean>(false);
 
   const showMobileMenu = () => {
@@ -47,15 +50,26 @@ export const NavBar: FC = () => {
             </a>
           </nav>
           <div className="hidden xl:flex gap-5">
-            <Link
-              to="/login"
-              className="cursor-pointer text-white text-base  font-medium font-thicccboi border-[1px] border-solid border-white rounded-lg py-2 px-3"
-            >
-              Zaloguj się
-            </Link>
-            <p className=" blur-[2px] cursor-pointer text-white text-base  font-medium font-thicccboi rounded-lg py-2 px-3 bg-gradient-to-r from-red-500 to-blue-500">
-              Zarejestruj się
-            </p>
+            {user ? (
+              <Link
+                to="/dashboard"
+                className="cursor-pointer text-white text-xl font-medium font-thicccboi rounded-lg py-2 px-3 bg-gradient-to-r from-red-500 to-blue-500"
+              >
+                <FaUser />
+              </Link>
+            ) : (
+              <>
+                <Link
+                  to="/login"
+                  className="cursor-pointer text-white text-base  font-medium font-thicccboi border-[1px] border-solid border-white rounded-lg py-2 px-3"
+                >
+                  Zaloguj się
+                </Link>
+                <p className=" blur-[2px] cursor-pointer text-white text-base  font-medium font-thicccboi rounded-lg py-2 px-3 bg-gradient-to-r from-red-500 to-blue-500">
+                  Zarejestruj się
+                </p>
+              </>
+            )}
           </div>
           <p
             className="cursor-pointer text-white text-2xl xl:hidden"

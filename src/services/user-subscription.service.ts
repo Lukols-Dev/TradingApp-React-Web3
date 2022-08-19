@@ -48,4 +48,8 @@ export class UserSubscriptionService {
       await http.get<any>("/customers")
     ).data;
   }
+
+  static async deleteCustomer(customerID: string) {
+    return await http.delete<any>(`/customers/${customerID}`);
+  }
 }
