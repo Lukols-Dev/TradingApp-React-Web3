@@ -24,7 +24,7 @@ export const Popup: FC<PopupProps> = ({
         <div className="gap-8 flex w-full">
           <input
             type="text"
-            className="w-[500px] px-7 rounded-md font-thicccboi text-lg py-4 border-2 border-black"
+            className="w-full sm:w-[500px] px-7 rounded-md font-thicccboi text-lg py-4 border-2 border-black"
             placeholder="Kod dostępu"
             value={value}
             onChange={onChange}

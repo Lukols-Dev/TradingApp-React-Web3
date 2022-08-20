@@ -85,7 +85,7 @@ export const Subscription: FC = () => {
           </Link>
           <button
             type="button"
-            className="cursor-pointer text-white text-base  font-medium font-thicccboi rounded-lg py-2 px-3 bg-gradient-to-r from-red-500 to-blue-500"
+            className="cursor-pointer text-white text-sm sm:text-base font-medium font-thicccboi rounded-lg py-2 px-3 bg-gradient-to-r from-red-500 to-blue-500"
             onClick={logOut}
           >
             Wyloguj się

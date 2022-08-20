@@ -17,13 +17,13 @@ export const CheckoutForm: FC = () => {
     const options = {
       lineItems: [
         {
-          price: "price_1LO5rBA31XL5oAWCEQo35201",
+          price: "price_1LYtXQB08wFbK6gAPvCuJsZV",
           quantity: 1,
         },
       ],
       mode: "subscription" as any,
-      successUrl: `${window.location.origin}/success`,
-      cancelUrl: `${window.location.origin}/cancel`,
+      successUrl: `${window.location.origin}/dashboard`,
+      cancelUrl: `${window.location.origin}/`,
       customerEmail: `${user.email}`,
     };
 

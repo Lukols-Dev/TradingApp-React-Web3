@@ -1,12 +1,14 @@
 import { FC, useEffect, useState } from "react";
 
 import { AiOutlineCheck } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import { CheckoutForm } from "../../components/subscription";
 import { UserSubscriptionService } from "../../services/user-subscription.service";
 import { ProductPrice } from "../../types/stripe.types";
 
 export const Price: FC = () => {
   const [productPrice, setProductPrice] = useState<ProductPrice>();
+  // const [subscription, setSubscritpion] = useState<ISubscription>();
 
   const getProduct = async () => {
     const resp = await UserSubscriptionService.getProductID(
@@ -20,8 +22,13 @@ export const Price: FC = () => {
     }
   };
 
+  const checkSubscription = () => {
+    return !!localStorage.getItem("sub");
+  };
+
   useEffect(() => {
     getProduct();
+    checkSubscription();
   }, []);
 
   return (
@@ -33,7 +40,7 @@ export const Price: FC = () => {
         Cena pakietu będzie wzrastać wraz z ilością użytkowników - utrzymując
         nieprzerwanie subskrypcję masz gwarancję obecnej ceny.
       </p>
-      <div className="w-[340px] h-[500px] sm:w-[400px] sm:h-[500px] bg-white rounded-lg flex flex-col items-center mt-10">
+      <div className="w-[340px] h-[500px] sm:w-[400px] sm:h-[500px] bg-white rounded-lg flex flex-col items-center mt-10 z-10">
         <h2 className="text-5xl font-medium font-thicccboi mt-10">Premium</h2>
         <p className="text-lg text-[#898CA9] font-normal font-thicccboi mt-10">
           Jedna cena, zero ograniczeń.
@@ -64,7 +71,16 @@ export const Price: FC = () => {
             </span>
           </div>
         )}
-        <CheckoutForm />
+        {checkSubscription() ? (
+          <Link
+            className="mt-10 rounded-lg bg-[blue] px-8 py-3 text-white font-thicccboi font-medium"
+            to="/dashboard"
+          >
+            Aktywna
+          </Link>
+        ) : (
+          <CheckoutForm />
+        )}
       </div>
     </div>
   );

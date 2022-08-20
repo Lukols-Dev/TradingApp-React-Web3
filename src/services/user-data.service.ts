@@ -5,14 +5,14 @@ import { cloudFirestore } from "../config/firebase";
 export class UserDataService {
   //Set subscription id from stripe to firestore cloud
   static setSubscriptionID = (userID: string, subscriptionID: string) => {
-    const docRef = doc(cloudFirestore, "TEST", `${userID}`);
+    const docRef = doc(cloudFirestore, "USERS", `${userID}`);
     return updateDoc(docRef, {
       subscriptionID: subscriptionID,
     });
   };
   //Set subscription id from stripe to firestore cloud
   static seCustomerID = (userID: string, customerID: string) => {
-    const docRef = doc(cloudFirestore, "TEST", `${userID}`);
+    const docRef = doc(cloudFirestore, "USERS", `${userID}`);
     return updateDoc(docRef, {
       customerID: customerID,
     });
@@ -20,12 +20,12 @@ export class UserDataService {
 
   //Get user Data from firestore cloud
   static getUserDataID = async (userID: string) => {
-    const docRef = doc(cloudFirestore, "TEST", `${userID}`);
+    const docRef = doc(cloudFirestore, "USERS", `${userID}`);
     return await getDoc(docRef);
   };
 
   static deleteSubscription = async (userID: string) => {
-    const docRef = doc(cloudFirestore, "TEST", `${userID}`);
+    const docRef = doc(cloudFirestore, "USERS", `${userID}`);
     return updateDoc(docRef, {
       customerID: deleteField(),
       subscriptionID: deleteField(),

@@ -34,7 +34,6 @@ export const FormRoute: FC = () => {
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
-    console.log(e.target.value);
   };
 
   return !access ? (
