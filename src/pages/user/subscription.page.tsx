@@ -97,10 +97,7 @@ export const Subscription: FC = () => {
           <h1 className="text-2xl w-[300px] sm:text-4xl sm:w-[500px] xl:text-6xl xl:w-[650px] text-white font-bold font-thicccboi mt-22 text-center">
             Informacje o Twojej subskrybcji
           </h1>
-          <div className="w-[340px] h-[500px] sm:w-[400px] sm:h-[500px] bg-white rounded-lg flex flex-col items-center mt-10 relative">
-            <h2 className="text-5xl font-medium font-thicccboi mt-10">
-              Premium
-            </h2>
+          <div className="w-[340px] h-[500px] sm:w-[400px] sm:h-[500px]  rounded-lg flex flex-col items-center mt-10 relative">
             <ul className="flex flex-col mt-10 gap-2">
               {subscription.map((item) => {
                 console.log(item);

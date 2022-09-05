@@ -2,10 +2,6 @@ import { FC, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { getStripe } from "../../config/stripe";
 import { AuthContext, UserAccount } from "../../context/auth.context";
-/**TODO:
- * - ustawić że użytkownik najpierw musi się zalogować a potem może kupić subksrypcje
- * - opisać dokładnie jak wygląda robienie subskrypcji
- */
 
 export const CheckoutForm: FC = () => {
   const { user } = useContext(AuthContext) as UserAccount;
@@ -17,11 +13,10 @@ export const CheckoutForm: FC = () => {
     const options = {
       lineItems: [
         {
-          price: "price_1LYtXQB08wFbK6gAPvCuJsZV",
+          price: process.env.REACT_APP_STRIPE_PRICE_TEST,
           quantity: 1,
         },
       ],
-      mode: "subscription" as any,
       successUrl: `${window.location.origin}/dashboard`,
       cancelUrl: `${window.location.origin}/`,
       customerEmail: `${user.email}`,

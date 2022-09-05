@@ -65,7 +65,7 @@ export const NavBar: FC = () => {
                 >
                   Zaloguj się
                 </Link>
-                <p className=" blur-[2px] cursor-pointer text-white text-base  font-medium font-thicccboi rounded-lg py-2 px-3 bg-gradient-to-r from-red-500 to-blue-500">
+                <p className="blur-[2px] cursor-pointer text-white text-base  font-medium font-thicccboi rounded-lg py-2 px-3 bg-gradient-to-r from-red-500 to-blue-500">
                   Zarejestruj się
                 </p>
               </>
