@@ -6,10 +6,10 @@ const axiosStripe = axios.create({
 
 axiosStripe.interceptors.request.use((config) => {
   //Add secred key
-  const accessToken = process.env.REACT_APP_STRIPE_SECRED_KEY_TEST;
+  const accessToken = process.env.REACT_APP_STRIPE_SECRED_KEY;
 
   if (accessToken) {
-    config.headers!.Authorization = `Bearer ${process.env.REACT_APP_STRIPE_SECRED_KEY_TEST}`;
+    config.headers!.Authorization = `Bearer ${process.env.REACT_APP_STRIPE_SECRED_KEY}`;
   }
   return config;
 });

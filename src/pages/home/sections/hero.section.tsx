@@ -1,25 +1,52 @@
-import { FC } from "react";
+import { ChangeEvent, FC, useState } from "react";
 
 import { PhoneGroupMockup } from "../../../assets/gorup-phones";
 
 import { ref, listAll, getDownloadURL } from "firebase/storage";
-import { firebaseStorage } from "../../../config/firebase";
+import { firebaseStorage, cloudFirestore } from "../../../config/firebase";
+import { doc, getDoc } from "firebase/firestore";
+import { AiOutlineArrowRight } from "react-icons/ai";
 
 export const HeroSection: FC = () => {
-  const downloadApp = async () => {
-    try {
-      const response = await getDownloadURL(
-        (
-          await listAll(ref(firebaseStorage, "download/"))
-        ).items[0]
-      );
+  const [passwordPopup, setPasswordPopup] = useState<boolean>(false);
+  const [password, setPassword] = useState<string>("");
 
-      if (response) {
-        window.open(response, "_self");
+  const downloadApp = async () => {
+    setPasswordPopup(true);
+    try {
+      const docRef = doc(cloudFirestore, "PRICING", "xF3cnffMw2Bwhlqv66xf");
+      const response = await getDoc(docRef);
+      if (password === response.data()?.password) {
+        setPasswordPopup(false);
+        const response = await getDownloadURL(
+          (
+            await listAll(ref(firebaseStorage, "download/"))
+          ).items[0]
+        );
+        if (response) {
+          window.open(response, "_self");
+        }
       }
     } catch (error) {
       console.log(error);
     }
+    setPassword("");
+  };
+
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Enter") {
+      downloadApp();
+      e.preventDefault();
+    }
+  };
+
+  const closePopup = () => {
+    setPasswordPopup(false);
+    setPassword("");
   };
 
   return (
@@ -88,6 +115,38 @@ export const HeroSection: FC = () => {
         <div className="absolute bottom-8 w-full h-[100px] blur-[20px] bg-[#0B0B0F] z-2"></div>
         <div className="absolute bottom-0 w-full h-[100px]  bg-gradient-to-t from-[#0B0B0F] to-[#0B0B0F]/[1] z-2"></div>
       </div>
+      {passwordPopup && (
+        <div className="w-screen h-screen flex fixed z-20 items-center justify-center top-0 left-0">
+          <div
+            className="w-full h-full fixed bg-black/[.8]"
+            onClick={closePopup}
+          ></div>
+          <div className="bg-white rounded-lg relative p-4 ">
+            <p className="text-lg font-normal font-thicccboi mb-2">
+              Dostęp tylko dla osób z zamkniętej listy:
+            </p>
+            <div className="gap-8 flex w-full">
+              <input
+                type="text"
+                className="w-full sm:w-[500px] px-7 rounded-md font-thicccboi text-lg py-4 border-2 border-black"
+                placeholder="Kod dostępu"
+                value={password}
+                onChange={onChange}
+                onKeyDown={handleKeyDown}
+              />
+              <button
+                onClick={downloadApp}
+                type="submit"
+                className=" flex justify-center items-center w-[70px] px-7 rounded-md font-thicccboi text-3xl py-4 bg-gradient-to-r from-red-500 to-blue-500 text-white"
+              >
+                <p className="text-3xl text-white">
+                  <AiOutlineArrowRight />
+                </p>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

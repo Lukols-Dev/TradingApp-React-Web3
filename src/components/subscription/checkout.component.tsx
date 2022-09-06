@@ -13,7 +13,7 @@ export const CheckoutForm: FC = () => {
     const options = {
       lineItems: [
         {
-          price: process.env.REACT_APP_STRIPE_PRICE_TEST,
+          price: process.env.REACT_APP_STRIPE_PRICE,
           quantity: 1,
         },
       ],

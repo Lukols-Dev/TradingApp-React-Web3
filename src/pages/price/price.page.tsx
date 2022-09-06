@@ -12,7 +12,7 @@ export const Price: FC = () => {
 
   const getProduct = async () => {
     const resp = await UserSubscriptionService.getProductID(
-      `${process.env.REACT_APP_STRIPE_PRODUCT_TEST}`
+      `${process.env.REACT_APP_STRIPE_PRODUCT}`
     );
     if (resp) {
       const respPrice = await UserSubscriptionService.getProductPriceID(

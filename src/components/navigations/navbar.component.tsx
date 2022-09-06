@@ -14,7 +14,7 @@ export const NavBar: FC = () => {
 
   return (
     <>
-      <header className="w-full h-20 flex bg-[#0B0B0F] fixed z-20">
+      <header className="w-full h-20 flex bg-[#0B0B0F] fixed z-30">
         <div className="mx-8 w-full h-20 xl:mx-36 flex items-center justify-between">
           <Link
             to="/"

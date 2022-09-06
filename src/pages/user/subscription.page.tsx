@@ -137,12 +137,17 @@ export const Subscription: FC = () => {
                 Anuluj Subskrypcję
               </button>
             ) : (
-              <Link
-                className="mt-10 rounded-lg bg-[blue] px-8 py-3 text-white font-thicccboi font-medium"
-                to="/price"
-              >
-                Subskrybuj
-              </Link>
+              <>
+                <p className="text-2xl w-[300px] sm:text-4xl sm:w-[500px] xl:text-2xl xl:w-[650px] text-[red] font-bold font-thicccboi mt-22 text-center">
+                  Aktualnie nie posiadasz wykupionej subskrypcji!
+                </p>
+                <Link
+                  className="mt-10 rounded-lg bg-[blue] px-8 py-3 text-white font-thicccboi font-medium"
+                  to="/price"
+                >
+                  Subskrybuj
+                </Link>
+              </>
             )}
           </div>
         </div>
