@@ -17,6 +17,7 @@ export const CheckoutForm: FC = () => {
           quantity: 1,
         },
       ],
+      mode: "subscription" as any,
       successUrl: `${window.location.origin}/dashboard`,
       cancelUrl: `${window.location.origin}/`,
       customerEmail: `${user.email}`,

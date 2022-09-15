@@ -1,5 +1,4 @@
 import { ChangeEvent, FC } from "react";
-import { AiOutlineArrowRight } from "react-icons/ai";
 
 interface PopupProps {
   value?: string;
@@ -33,11 +32,9 @@ export const Popup: FC<PopupProps> = ({
           <button
             onClick={getAccess}
             type="submit"
-            className=" flex justify-center items-center w-[70px] px-7 rounded-md font-thicccboi text-3xl py-4 bg-gradient-to-r from-red-500 to-blue-500 text-white"
+            className=" flex justify-center items-center w-[70px] px-7 rounded-md font-thicccboi text-xl py-4 bg-gradient-to-r from-red-500 to-blue-500 text-white"
           >
-            <p className="text-3xl text-white">
-              <AiOutlineArrowRight />
-            </p>
+            Dalej
           </button>
         </div>
       </div>

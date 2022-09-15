@@ -84,15 +84,15 @@ export const BaseLayout: FC = () => {
       <img
         alt="Hero"
         src={Bitcoin}
-        className="hidden  xl:inline absolute top-[300px] left-[250px] top-[520px]"
+        className="hidden  xl:inline absolute left-[150px] top-[300px] 2xl:left-[250px] top-[520px]"
       />
       <img
         alt="Hero"
         src={Litecoin}
-        className="hidden  xl:inline absolute right-[300px] top-[253.67px]"
+        className="hidden right-[170px] xl:inline absolute 2xl:right-[300px] top-[253.67px]"
       />
       <svg
-        className=" absolute right-0 top-[800px] z-10"
+        className=" absolute right-[0px] sm:right-[-300px] xl:right-[-100px] top-[800px] z-10"
         width="516"
         height="1045"
         viewBox="0 0 516 1045"
@@ -282,7 +282,7 @@ export const BaseLayout: FC = () => {
         src={Monero}
       />
       <img
-        className="hidden  xl:inline absolute top-[1500px] left-[250px]"
+        className="hidden  xl:inline absolute top-[1500px] left-[20px]"
         alt="ethereum"
         src={Star3}
       />

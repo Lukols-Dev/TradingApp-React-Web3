@@ -5,7 +5,6 @@ import { PhoneGroupMockup } from "../../../assets/gorup-phones";
 import { ref, listAll, getDownloadURL } from "firebase/storage";
 import { firebaseStorage, cloudFirestore } from "../../../config/firebase";
 import { doc, getDoc } from "firebase/firestore";
-import { AiOutlineArrowRight } from "react-icons/ai";
 
 export const HeroSection: FC = () => {
   const [passwordPopup, setPasswordPopup] = useState<boolean>(false);
@@ -54,7 +53,7 @@ export const HeroSection: FC = () => {
       <h1 className="text-3xl w-[300px] sm:text-5xl sm:w-[500px] xl:text-7xl xl:w-[780px] text-white font-black font-thicccboi mt-32  text-center">
         Najlepsza aplikacja tradingowa AI
       </h1>
-      <p className="text-[12px] sm:text-xs	text-center mt-4 xl:text-base text-[#898CA9] font-normal font-thicccboi w-[300px] sm:w-[700px]">
+      <p className="text-[12px] sm:text-xs	text-center mt-4 xl:text-base text-[#898CA9] font-normal font-thicccboi w-[300px] sm:w-[700px] z-10">
         Kupuj i sprzedawaj z TradingApp – aplikacją opartą o sztuczną
         inteligencję. Jest to narzędzie wspomagające handel. Dzięki niemu,
         użytkownik może automatycznie rozgrywać pozycje.
@@ -137,11 +136,9 @@ export const HeroSection: FC = () => {
               <button
                 onClick={downloadApp}
                 type="submit"
-                className=" flex justify-center items-center w-[70px] px-7 rounded-md font-thicccboi text-3xl py-4 bg-gradient-to-r from-red-500 to-blue-500 text-white"
+                className=" flex justify-center items-center w-[70px] px-7 rounded-md font-thicccboi text-xl py-4 bg-gradient-to-r from-red-500 to-blue-500 text-white"
               >
-                <p className="text-3xl text-white">
-                  <AiOutlineArrowRight />
-                </p>
+                Dalej
               </button>
             </div>
           </div>

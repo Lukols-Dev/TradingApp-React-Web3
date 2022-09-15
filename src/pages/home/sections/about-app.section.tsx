@@ -16,7 +16,7 @@ export const AboutAppSection: FC = () => {
         zostały przygotowane tak, aby użytkownik dokładnie poznał aplikację i
         potrafił ją odpowiednio skonfigurować.
       </p>
-      <div className="flex gap-8 sm:gap-[100px] justify-between mt-[50px] sm:mt-[125px] flex-col-reverse sm:flex-row">
+      <div className="flex flex-col-reverse gap-8 sm:gap-[100px] mt-[50px] sm:mt-[125px] sm:flex-row">
         <img src={galaxyLogin} className="h-auto w-[500px] z-20 " alt="phone" />
         <div className="flex flex-col mt-10 sm:mt-24">
           <h2 className="text-white text-xl sm:text-4xl font-black font-thicccbo">

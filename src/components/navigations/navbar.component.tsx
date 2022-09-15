@@ -80,7 +80,7 @@ export const NavBar: FC = () => {
         </div>
       </header>
       {hiddenMenu && (
-        <div className="flex flex-col w-[150px] h-screen fixed top-20 right-0 z-20 bg-[#0B0B0F] xl:hidden">
+        <div className="flex flex-col w-[150px] h-screen fixed top-20 right-0 z-30 bg-[#0B0B0F] xl:hidden">
           <nav className="flex flex-col w-full h-full ml-4 mt-4">
             {user && (
               <Link
