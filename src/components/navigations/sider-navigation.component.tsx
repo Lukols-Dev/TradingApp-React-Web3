@@ -52,7 +52,10 @@ export const SiderNavigation: FC<SiderNavigationProps> = (props) => {
           </Link>
         </Menu.Item>
       </Menu>
-      <a className="h-[40px] w-[170px] text-sm text-black bg-[#5E6366]/[.2] flex gap-2 absolute bottom-20 items-center justify-center rounded-2xl	">
+      <a
+        className="h-[40px] w-[170px] text-sm text-black bg-[#5E6366]/[.2] flex gap-2 absolute bottom-20 items-center justify-center rounded-2xl"
+        href="mailto:binanceapitrader@gmail.com"
+      >
         <IoHelpCircleOutline className="text-xl" />
         Contact Support
       </a>
