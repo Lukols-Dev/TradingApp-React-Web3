@@ -14,4 +14,10 @@ axiosStripe.interceptors.request.use((config) => {
   return config;
 });
 
+// HTTP for connection with backend api
+const axiosAPI = axios.create({
+  baseURL: process.env.REACT_APP_API_URL,
+});
+
 export { axiosStripe as http };
+export { axiosAPI as httpAPI };

@@ -1,7 +1,10 @@
+import { message } from "antd";
 import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
+  // signInWithEmailAndPassword,
+  // signOut,
 } from "firebase/auth";
 import { createContext, FC, useEffect, useState } from "react";
 import { firebaseAuth } from "../config/firebase";
@@ -23,18 +26,26 @@ export const UserAuthContextProvider: FC<UserAuthContextProviderProps> = ({
   children,
 }) => {
   const [user, setUser] = useState<any>({});
-
+  //OLD
   // Log In function
   const logIn = (email: string, password: string) => {
-    return signInWithEmailAndPassword(firebaseAuth, email, password);
+    return signInWithEmailAndPassword(firebaseAuth, email, password)
+      .then((res) => res && message.success("Successful login"))
+      .catch(
+        (res) =>
+          res && message.error("Problem with logging in, try again in a while!")
+      );
   };
+
   // Log Out function
   const logOut = () => {
     const keysToRemove = ["sub", "cus"];
     keysToRemove.forEach((k) => localStorage.removeItem(k));
-    return signOut(firebaseAuth);
+    return signOut(firebaseAuth).catch(
+      (res) => res && message.error("You can't log out!")
+    );
   };
-  //
+
   const unsubscribe = onAuthStateChanged(firebaseAuth, (currentUser) => {
     setUser(currentUser);
   });
