@@ -61,13 +61,16 @@ export const NavBar: FC = () => {
               <>
                 <Link
                   to="/login"
-                  className="cursor-pointer text-white text-base  font-medium font-thicccboi border-[1px] border-solid border-white rounded-lg py-2 px-3"
+                  className="max-h-[40px] cursor-pointer text-white text-base font-medium font-thicccboi border-[1px] border-solid border-white rounded-lg py-2 px-3"
                 >
                   Zaloguj się
                 </Link>
-                <p className="blur-[2px] cursor-pointer text-white text-base  font-medium font-thicccboi rounded-lg py-2 px-3 bg-gradient-to-r from-red-500 to-blue-500">
+                <Link
+                  to="/register"
+                  className="cursor-pointer text-white text-base  font-medium font-thicccboi rounded-lg py-2 px-3 bg-gradient-to-r from-red-500 to-blue-500"
+                >
                   Zarejestruj się
-                </p>
+                </Link>
               </>
             )}
           </div>
@@ -121,6 +124,12 @@ export const NavBar: FC = () => {
                   className=" w-full h-[40px] text-white text-xl font-medium font-thicccboi"
                 >
                   Zaloguj się
+                </Link>
+                <Link
+                  to="/register"
+                  className=" w-full h-[40px] text-white text-xl font-medium font-thicccboi"
+                >
+                  Zarejestruj się
                 </Link>
               </>
             )}

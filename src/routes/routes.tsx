@@ -5,8 +5,9 @@ import { UserAccountLayout } from "../components/layouts/account-layout";
 import { LoginRegisterLayout } from "../components/layouts/login-register-layout";
 import { CheckoutForm } from "../components/subscription";
 import { UserAuthContextProvider } from "../context/auth.context";
-import { Home, PaymentCheckout, Price, Subscription } from "../pages";
+import { Home, PaymentCheckout, Price, Register, Subscription } from "../pages";
 import { Login } from "../pages/login/login.page";
+import { SuccessOrderPage } from "../pages/payment/success-order.page";
 import { Dashboard } from "../pages/user/dashboard.page";
 import { SubscriptionPlans } from "../pages/user/plans.page";
 import { FormRoute } from "./formRoute";
@@ -27,6 +28,7 @@ export const BaseRoutes: FC = () => {
           </Route>
           <Route element={<LoginRegisterLayout />}>
             <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
           </Route>
           <Route element={<PrivateRoute />}>
             <Route path="/subscription" element={<Subscription />} />
@@ -37,6 +39,7 @@ export const BaseRoutes: FC = () => {
               </Route>
             </Route>
           </Route>
+          <Route path="/order/success/:id" element={<SuccessOrderPage />} />
         </Routes>
       </BrowserRouter>
     </UserAuthContextProvider>

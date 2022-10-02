@@ -1,5 +1,5 @@
 import { ChangeEvent, FC, useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext, UserAccount } from "../../context/auth.context";
 
 export const Login: FC = () => {
@@ -26,14 +26,14 @@ export const Login: FC = () => {
         <h1 className="text-5xl text-white font-bold font-thicccboi">
           Zaloguj się na konto
         </h1>
-        <div className="blur-[2px] text-xl text-white font-normal font-thicccboi mt-7">
+        <div className="text-xl text-white font-normal font-thicccboi mt-7">
           Nie masz jeszcze konta?
-          <a
-            href="/login"
+          <Link
+            to="/register"
             className="border-b-2 border-white border-solid ml-2 pb-1"
           >
             Zarejestruj się
-          </a>
+          </Link>
         </div>
         <div className="mt-20 gap-8 flex flex-col w-full">
           <input

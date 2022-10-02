@@ -1,23 +1,58 @@
-import { http } from "../config/axios";
-import { Product, ProductPrice, Subscription } from "../types/stripe.types";
+import { http, httpAPI } from "../config/axios";
+import {
+  ICheckoutSessionData,
+  Product,
+  ProductPrice,
+  Subscription,
+} from "../types/stripe.types";
 
 export class UserSubscriptionService {
-  //Get product by id
-  static async getProductID(productID: string) {
-    return await (
-      await http.get<Product>(`/products/${productID}`)
+  // NEW VERSION
+
+  static async createCheckoutSession(priceID: string, customerID: string) {
+    return (
+      await httpAPI.post<string>("/create-session", {
+        priceID: priceID,
+        customerID: customerID,
+      })
     ).data;
   }
 
-  //Get list of products
-  static async getAllProducts() {
-    return (await http.get<Product[]>(`/products`)).data;
+  static async getCheckoutSessionData(sessionID: string) {
+    return await (
+      await httpAPI.get<ICheckoutSessionData>(`/order/success/${sessionID}`)
+    ).data;
   }
 
-  //Get product price by id_price
-  static async getProductPriceID(priceID: string) {
-    return (await http.get<ProductPrice>(`/prices/${priceID}`)).data;
+  static async getProductID(productID: string) {
+    return (await httpAPI.get<Product>(`/product/${productID}`)).data;
   }
+
+  static async getProductPriceID(priceID: string) {
+    return (await httpAPI.get<ProductPrice>(`/product-price/${priceID}`)).data;
+  }
+
+  static async getAllProducts() {
+    return (await httpAPI.get<Product[]>(`/products`)).data;
+  }
+
+  // OLD version
+  //Get product by id
+  // static async getProductID(productID: string) {
+  //   return await (
+  //     await http.get<Product>(`/products/${productID}`)
+  //   ).data;
+  // }
+
+  //Get list of products
+  // static async getAllProducts() {
+  //   return (await http.get<Product[]>(`/products`)).data;
+  // }
+
+  //Get product price by id_price
+  // static async getProductPriceID(priceID: string) {
+  //   return (await http.get<ProductPrice>(`/prices/${priceID}`)).data;
+  // }
 
   //Get app subscription by id
   static async getSubscriptionID(subscriptionID: string) {

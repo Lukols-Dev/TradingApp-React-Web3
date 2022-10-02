@@ -67,3 +67,9 @@ export interface DataType {
   age: number;
   address: string;
 }
+
+export interface ICheckoutSessionData {
+  subscription: string;
+  payment_status: "paid" | "unpaid";
+  status: "expired" | "complete";
+}

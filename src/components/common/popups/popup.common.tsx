@@ -14,7 +14,7 @@ export const Popup: FC<PopupProps> = ({
   value,
 }) => {
   return (
-    <div className="w-screen h-screen flex fixed z-10 items-center justify-center top-0 left-0">
+    <div className="w-screen h-screen flex fixed z-10 items-center justify-center top-0 left-0 bg-[#000]">
       <div className="w-full h-full fixed"></div>
       <div className="bg-white rounded-lg relative p-4 ">
         <p className="text-lg font-normal font-thicccboi mb-2">

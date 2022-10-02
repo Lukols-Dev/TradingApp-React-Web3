@@ -84,7 +84,7 @@ export const HeroSection: FC = () => {
             />
           </svg>
         </button>
-        <div className=" cursor-pointer blur-[2px] bg-white/20 rounded-lg">
+        <div className=" cursor-pointer blur-[2px] bg-white/20 h-12 rounded-lg">
           <p className="flex items-center justify-center  w-32  h-12 sm:w-40 sm:h-12  border-[1px] border-solid border-white rounded-lg overflow-hidden">
             <svg
               width="95"
