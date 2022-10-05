@@ -6,6 +6,7 @@ import { SiderNavigation } from "../navigations/sider-navigation.component";
 import { IoChevronDownOutline } from "react-icons/io5";
 import { FaUserAlt } from "react-icons/fa";
 import { AuthContext, UserAccount } from "../../context/auth.context";
+import { HeaderMessage } from "../messages/header-message.component";
 
 const { Header, Content } = Layout;
 
@@ -33,6 +34,7 @@ export const UserAccountLayout: FC = () => {
     <Layout>
       <SiderNavigation logOut={logOut} />
       <Layout className="bg-[#EEF0FA] w-screen h-screen overflow-hidden">
+        <HeaderMessage />
         <Header className="h-[60px] pl-[20px] bg-transparent flex items-center justify-between ">
           {headerNav !== null ? headerNav : ""}
           <div className="px-2 gap-4 bg-white h-[40px] min-w-fit rounded-lg flex items-center justify-between">
