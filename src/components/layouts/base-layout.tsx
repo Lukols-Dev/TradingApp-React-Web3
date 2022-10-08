@@ -89,7 +89,7 @@ export const BaseLayout: FC = () => {
       <img
         alt="Hero"
         src={Litecoin}
-        className="hidden right-[170px] xl:inline absolute 2xl:right-[300px] top-[253.67px]"
+        className="hidden right-[170px] xl:inline absolute 2xl:right-[200px] top-[253.67px]"
       />
       <svg
         className=" absolute right-[0px] sm:right-[-300px] xl:right-[-100px] top-[800px] z-10"
