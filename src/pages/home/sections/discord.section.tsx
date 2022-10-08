@@ -4,7 +4,7 @@ import shield from "../../../assets/shield.png";
 export const DiscordSection: FC = () => {
   return (
     <section className="h-[600px] w-full flex flex-col items-center justify-center z-10 mt-10">
-      <div className="h-[250px] w-[340px] sm:w-[800px] max-w-4xl sm:h-[350px] flex flex-col items-center justify-center bg-[#1A1B23] rounded-[10px] sm:rounded-[40px] relative">
+      <div className="h-[250px] w-[340px] max-w-4xl sm:w-[500px] sm:h-[350px] lg:w-[800px] flex flex-col items-center justify-center bg-[#1A1B23] rounded-[10px] sm:rounded-[40px] relative">
         <h1 className="text-xl sm:text-2xl w-[300px] sm:text-3xl sm:w-[500px] xl:text-4xl xl:w-[780px] text-white font-bold font-thicccboi text-center ">
           Dołącz do zamkniętej grupy na Discord
         </h1>
