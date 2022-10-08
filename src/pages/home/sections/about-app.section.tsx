@@ -7,7 +7,7 @@ import galaxyMonitoring from "../../../assets/phones/galaxy-monitoring.svg";
 
 export const AboutAppSection: FC = () => {
   return (
-    <section className="flex flex-col w-full h-[2600px] sm:h-[2500px] gap-x-12 items-center z-10">
+    <section className="flex flex-col w-full h-[2750px] sm:h-[2500px] gap-x-12 items-center z-10">
       <h1 className="text-2xl w-[300px] sm:text-5xl sm:w-[500px] xl:text-6xl xl:w-[650px] text-white font-bold font-thicccboi mt-32  text-center">
         Jak zacząć korzystać z aplikacji?
       </h1>

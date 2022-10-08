@@ -36,6 +36,17 @@ export class UserSubscriptionService {
     return (await httpAPI.get<Product[]>(`/products`)).data;
   }
 
+  //Get app subscription by id
+  static async getSubscriptionID(subscriptionID: string) {
+    return (await httpAPI.get<Subscription>(`/subscription/${subscriptionID}`))
+      .data;
+  }
+
+  //Delete subscription by ID
+  static async deleteSubscription(subsctiptionID: string) {
+    return await httpAPI.delete(`/delete-subscription/${subsctiptionID}`);
+  }
+
   // OLD version
   //Get product by id
   // static async getProductID(productID: string) {
@@ -54,21 +65,21 @@ export class UserSubscriptionService {
   //   return (await http.get<ProductPrice>(`/prices/${priceID}`)).data;
   // }
 
-  //Get app subscription by id
-  static async getSubscriptionID(subscriptionID: string) {
-    return (await http.get<Subscription>(`/subscriptions/${subscriptionID}`))
-      .data;
-  }
+  // //Get app subscription by id
+  // static async getSubscriptionID(subscriptionID: string) {
+  //   return (await http.get<Subscription>(`/subscriptions/${subscriptionID}`))
+  //     .data;
+  // }
 
   //Get all app subscriptions
   static async getAllSubscription() {
     return (await http.get<any>(`/subscriptions`)).data;
   }
 
-  //Delete subscription by ID
-  static async deleteSubscription(subsctiptionID: string) {
-    return await http.delete(`/subscriptions/${subsctiptionID}`);
-  }
+  // //Delete subscription by ID
+  // static async deleteSubscription(subsctiptionID: string) {
+  //   return await http.delete(`/subscriptions/${subsctiptionID}`);
+  // }
 
   static async getSubscriptionBySearch() {
     return await http.get<Subscription>(

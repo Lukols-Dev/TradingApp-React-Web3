@@ -7,12 +7,13 @@ interface CardPlanSubscriptionProps {
   price: number;
   status: boolean;
   subscribe: () => void;
+  unsubscribe: () => void;
 }
 
 export const CardPlanSubscription: FC<CardPlanSubscriptionProps> = (props) => {
   return (
-    <div {...props} className="px-4">
-      <div className="w-[300px] h-full mr-4">
+    <div {...props} className="px-4 rounded-lg border-2 border-gray">
+      <div className="w-[300px] h-full">
         <div className="w-full h-[100px] font-roboto font-bold text-2xl flex flex-col items-center justify-center">
           Starter
           <span className="bg-black w-[30px] h-[4px] mt-4 rounded-[50px]"></span>
@@ -56,15 +57,26 @@ export const CardPlanSubscription: FC<CardPlanSubscriptionProps> = (props) => {
             </span>
           </div>
         </div>
-        <div className="w-full h-[100px] flex flex-col items-center justify-center">
-          <Button
-            className="w-60 rounded-lg bg-[#0751D3] border-[transparent] hover:bg-[#0751D3]/[.6]"
-            size="large"
-            type="primary"
-            onClick={props.subscribe}
-          >
-            Subscribe
-          </Button>
+        <div className="w-full flex items-center justify-center">
+          {props.status ? (
+            <Button
+              className="w-60 rounded-lg bg-[#0751D3] border-[transparent] hover:bg-[#0751D3]/[.6]"
+              size="large"
+              type="primary"
+              onClick={props.unsubscribe}
+            >
+              Unsubscribe
+            </Button>
+          ) : (
+            <Button
+              className="w-60 rounded-lg bg-[#0751D3] border-[transparent] hover:bg-[#0751D3]/[.6]"
+              size="large"
+              type="primary"
+              onClick={props.subscribe}
+            >
+              Subscribe
+            </Button>
+          )}
         </div>
       </div>
     </div>
