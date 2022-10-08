@@ -7,7 +7,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { cloudFirestore } from "../config/firebase";
 
 export const FormRoute: FC = () => {
-  const [access, setAccess] = useState<boolean>(true); //TODO: change state
+  const [access, setAccess] = useState<boolean>(false); //TODO: change state
   const [value, setValue] = useState<string>("");
 
   const checkAccess = async () => {

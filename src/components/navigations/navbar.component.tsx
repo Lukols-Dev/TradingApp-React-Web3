@@ -27,6 +27,8 @@ export const NavBar: FC = () => {
             <a
               className="text-white text-xl font-medium font-thicccboi"
               href="https://tradingapp.gitbook.io/tradingapp/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Materiały
             </a>
@@ -36,17 +38,19 @@ export const NavBar: FC = () => {
             >
               Cennik
             </Link>
-            <Link
-              className=" blur-[2px] text-white text-xl font-medium font-thicccboi"
-              to="/"
-            >
-              Zespół
-            </Link>
             <a
               className=" text-white text-xl  font-medium font-thicccboi"
               href="https://discord.gg/eZKFX3skvh"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Discord
+            </a>
+            <a
+              className="text-white text-xl font-medium font-thicccboi"
+              href="mailto:helpdesktradingapp@gmail.com"
+            >
+              Kontakt
             </a>
           </nav>
           <div className="hidden xl:flex gap-5">
@@ -101,6 +105,8 @@ export const NavBar: FC = () => {
               <a
                 className="w-full h-[40px] text-white text-xl  font-medium font-thicccboi"
                 href="https://tradingapp.gitbook.io/tradingapp/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Materiały
               </a>
@@ -110,17 +116,19 @@ export const NavBar: FC = () => {
               >
                 Cennik
               </Link>
-              <Link
-                className="w-full h-[40px] blur-[2px] text-white text-xl font-medium font-thicccboi"
-                to="/"
-              >
-                Zespół
-              </Link>
               <a
                 className="w-full h-[40px] text-white text-xl font-medium font-thicccboi"
                 href="https://discord.gg/eZKFX3skvh"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Discord
+              </a>
+              <a
+                className="w-full h-[40px] text-white text-xl font-medium font-thicccboi"
+                href="mailto:helpdesktradingapp@gmail.com"
+              >
+                Kontakt
               </a>
               {!user && (
                 <>
