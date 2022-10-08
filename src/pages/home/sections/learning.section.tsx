@@ -4,8 +4,8 @@ import learnDash from "../../../assets/learn-dashboard.png";
 
 export const LearningSection: FC = () => {
   return (
-    <section className="w-full h-[500px] flex flex-col items-center justify-center z-10 mt-40 sm:mt-10 mb-20 sm:flex-row">
-      <div className="flex items-center justify-center w-[340px] sm:min-w-[800px] sm:w-[1500px]">
+    <section className="w-full h-[500px] flex flex-col items-center justify-center z-10 mt-40 sm:h-[700px] sm:mt-10 mb-20 sm:flex-col lg:mt-10 mb-20 lg:flex-row">
+      <div className="flex items-center justify-center w-[340px] sm:min-w-[400px] sm:w-[600px] lg:min-w-[800px] lg:w-[1500px]">
         <img
           className="rounded-lg border-white/[.3] border-2"
           alt="learn"

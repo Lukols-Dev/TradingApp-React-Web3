@@ -7,8 +7,8 @@ import galaxyMonitoring from "../../../assets/phones/galaxy-monitoring.svg";
 
 export const AboutAppSection: FC = () => {
   return (
-    <section className="flex flex-col w-full h-[2750px] sm:h-[2500px] gap-x-12 items-center z-10">
-      <h1 className="text-2xl w-[300px] sm:text-5xl sm:w-[500px] xl:text-6xl xl:w-[650px] text-white font-bold font-thicccboi mt-32  text-center">
+    <section className="flex flex-col w-full h-[2750px] sm:h-[4100px] lg:h-[2500px] gap-x-12 items-center z-10">
+      <h1 className="text-2xl w-[300px] sm:text-5xl sm:w-[500px] xl:text-6xl xl:w-[650px] text-white font-bold font-thicccboi mt-32 text-center">
         Jak zacząć korzystać z aplikacji?
       </h1>
       <p className="text-[#898CA9] text-lg sm:text-2xl font-normal font-thicccbo w-[300px] sm:w-[800px] mt-7 sm:text-center">
@@ -16,7 +16,7 @@ export const AboutAppSection: FC = () => {
         zostały przygotowane tak, aby użytkownik dokładnie poznał aplikację i
         potrafił ją odpowiednio skonfigurować.
       </p>
-      <div className="flex flex-col-reverse gap-8 sm:gap-[100px] mt-[50px] sm:mt-[125px] sm:flex-row">
+      <div className="flex flex-col-reverse gap-8  mt-[50px] sm:gap-[100px] sm:mt-[50px] sm:flex-col-reverse lg:gap-[100px] lg:mt-[125px] lg:flex-row">
         <img src={galaxyLogin} className="h-auto w-[500px] z-20 " alt="phone" />
         <div className="flex flex-col mt-10 sm:mt-24">
           <h2 className="text-white text-xl sm:text-4xl font-black font-thicccbo">
@@ -29,7 +29,7 @@ export const AboutAppSection: FC = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-col-reverse sm:flex-row-reverse gap-8 sm:gap-[100px] justify-between">
+      <div className="flex flex-col-reverse sm:flex-col-reverse lg:flex-row-reverse gap-8 sm:gap-[100px] justify-between">
         <img src={galaxySignal} className="h-auto w-[500px] z-20" alt="phone" />
         <div className="flex flex-col sm:mt-24">
           <h2 className="text-white text-xl sm:text-4xl font-black font-thicccbo">
@@ -42,7 +42,7 @@ export const AboutAppSection: FC = () => {
           </p>
         </div>
       </div>
-      <div className="flex gap-8 sm:gap-[100px] justify-between flex-col-reverse sm:flex-row">
+      <div className="flex gap-8 sm:gap-[100px] justify-between flex-col-reverse sm:flex-col-reverse lg:flex-row">
         <img src={galaxyBuy} className="h-auto w-[500px] z-20" alt="phone" />
         <div className="flex flex-col sm:mt-24">
           <h2 className="text-white text-xl sm:text-4xl font-black font-thicccbo">
@@ -55,7 +55,7 @@ export const AboutAppSection: FC = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-col-reverse sm:flex-row-reverse gap-8 sm:gap-[100px] justify-between">
+      <div className="flex flex-col-reverse gap-8 sm:gap-[100px] sm:flex-col-reverse lg:flex-row-reverse  justify-between">
         <img
           src={galaxyMonitoring}
           className="h-auto w-[500px] z-20"

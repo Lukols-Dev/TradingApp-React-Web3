@@ -6,7 +6,7 @@ import { IoAnalyticsOutline } from "react-icons/io5";
 
 export const InfoSection: FC = () => {
   return (
-    <section className="w-full h-[800px] flex flex-col gap-y-12 items-center justify-center sm:flex-row sm:h-[600px] sm:gap-x-12">
+    <section className="w-full h-[800px] flex flex-col gap-y-12 items-center justify-center sm:flex-col sm:h-[1100px] sm:gap-y-12 lg:flex-row lg:h-[600px] lg:gap-x-12 ">
       <div className="w-[340px] h-[300px] flex flex-col items-center justify-center bg-[#1A1B23] rounded-xl z-10 mb-8 sm:mb-0 sm:w-[440px] sm:h-[250px]">
         <span className="w-[50px] h-[50px] text-3xl text-white rounded-[50%] mb-4 flex items-center justify-center bg-gradient-to-r from-red-500 to-blue-500 sm:w-[60px] sm:h-[60px] sm:text-4xl">
           <BiBrain />
