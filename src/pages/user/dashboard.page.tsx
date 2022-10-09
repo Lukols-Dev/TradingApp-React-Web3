@@ -5,7 +5,7 @@ import { TradingViewChar } from "../../components/iframes/tradingView.iframe";
 
 export const Dashboard: FC = () => {
   const firstRowColumnStye =
-    "firstRowColumn h-[145px] max-h-[145px] w-[320px] min-w-[320px] flex justify-center items-center";
+    "firstRowColumn blur-sm h-[145px] max-h-[145px] w-[320px] min-w-[320px] flex justify-center items-center";
   const secoundRowColumnStye =
     "secoundRowColumn h-full w-full bg-white min-w-[680px] mt-10 mb-10 rounded-lg overflow-hidden";
 

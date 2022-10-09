@@ -17,7 +17,7 @@ interface SiderNavigationProps {
 
 export const SiderNavigation: FC<SiderNavigationProps> = (props) => {
   const menuItemStyle =
-    "h-[60px] w-[170px] rounded-xl border-transparent active:bg-[#0751D3] focus-within:bg-[#0751D3] hover:bg-[#0751D3] after:border-none";
+    "h-[60px] w-[170px] rounded-xl border-none active:bg-[#0751D3] focus-within:bg-[#0751D3] hover:bg-[#0751D3] after:border-none";
   const menuItemTextStyle =
     "flex items-center gap-4 font-roboto font-normal text-lg active:text-white focus:text-white hover:text-white";
 
@@ -38,7 +38,7 @@ export const SiderNavigation: FC<SiderNavigationProps> = (props) => {
       <Menu
         mode="inline"
         inlineIndent={16}
-        className="flex flex-col items-center"
+        className="flex flex-col items-center border-none"
       >
         <Menu.Item className={menuItemStyle} key="/dashboard">
           <Link className={menuItemTextStyle} to="/dashboard">
@@ -57,7 +57,7 @@ export const SiderNavigation: FC<SiderNavigationProps> = (props) => {
         href="mailto:helpdesktradingapp@gmail.com"
       >
         <IoHelpCircleOutline className="text-xl" />
-        Contact Support
+        Pomoc
       </a>
       <button
         className="h-[60px] w-[170px] text-lg text-[#CC5F5F] flex gap-2 absolute bottom-0 items-center justify-center"

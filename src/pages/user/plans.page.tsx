@@ -99,22 +99,23 @@ export const SubscriptionPlans: FC = () => {
     <div className="w-full h-[600px] bg-white rounded-lg flex overflow-auto">
       <div className="min-w-[450px] h-700 flex flex-col p-4">
         <p className="font-roboto font-medium text-base">
-          End subscription:
+          Okres rozliczeniowy:
           <span className="font-bold">
             {DateTimeConverter(subscriptionData?.current_period_start)}-
             {DateTimeConverter(subscriptionData?.current_period_end)}
           </span>
         </p>
         <p className="font-roboto font-medium text-base">
-          Your plan: <span className="font-bold">Starter</span>
+          Wybrany plan: <span className="font-bold">-</span>
         </p>
         <p className="font-roboto font-medium text-base">
-          Price: <span className="font-bold">100$</span>
+          Cena planu: <span className="font-bold">-</span>
         </p>
       </div>
       <div className="w-full h-full min-w-[300px] flex p-10 justify-center">
         <CardPlanSubscription
-          price={productPrice.unit_amount / 100}
+          // price={productPrice.unit_amount / 100}
+          price={19.99}
           subscribe={goToCheckout}
           unsubscribe={deleteSubscription}
           status={!!userData?.subscriptionID}

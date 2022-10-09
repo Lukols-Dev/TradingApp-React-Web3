@@ -19,10 +19,10 @@ export const CardPlanSubscription: FC<CardPlanSubscriptionProps> = (props) => {
           <span className="bg-black w-[30px] h-[4px] mt-4 rounded-[50px]"></span>
         </div>
         <div className="w-full h-[100px] flex items-center justify-center">
-          <div className="flex ml-8 gap-2 items-center justify-center ">
-            <span className="text-2xl font-bold relative bottom-6">$</span>
+          <div className="flex gap-2 items-center justify-center ">
+            <span className="text-2xl font-bold relative bottom-6">PLN</span>
             <p className="m-0 font-roboto font-bold text-6xl">{props.price}</p>
-            <span className=" text-sm font-bold relative top-4">/month</span>
+            <span className=" text-sm font-bold relative top-4">/msc</span>
           </div>
         </div>
         <div className="w-full h-[100px] font-roboto font-bold text-sm flex flex-col items-center justify-center">
@@ -73,8 +73,9 @@ export const CardPlanSubscription: FC<CardPlanSubscriptionProps> = (props) => {
               size="large"
               type="primary"
               onClick={props.subscribe}
+              disabled
             >
-              Subscribe
+              Subskrybuj
             </Button>
           )}
         </div>

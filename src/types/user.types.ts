@@ -10,3 +10,8 @@ export interface IUserData {
   customerID: string;
   subscriptionID: string;
 }
+
+export interface UserName {
+  name: string;
+  surname: string;
+}
