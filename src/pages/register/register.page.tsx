@@ -1,4 +1,5 @@
 import { Checkbox } from "antd";
+import { message } from "antd";
 import { CheckboxChangeEvent } from "antd/lib/checkbox";
 import { ChangeEvent, FC, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -15,29 +16,27 @@ export const Register: FC = () => {
   const [checkNewsletter, setCheckNewsletter] = useState<boolean>(false);
 
   const handleRegister = async () => {
-    try {
-      await UserAuthService.registerAccount(
-        email,
-        password,
-        name,
-        surname,
-        checkTerms,
-        checkNewsletter
-      );
-      navigate(`/register/complete?email=${email}`);
-    } catch (error) {
-      console.log(error);
+    if (email && password && name && surname && checkTerms) {
+      try {
+        await UserAuthService.registerAccount(
+          email,
+          password,
+          name,
+          surname,
+          checkTerms,
+          checkNewsletter
+        );
+        navigate(`/register/complete?email=${email}`);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      message.error("Musisz wypełnić wszystkie obowiązkowe pola!");
     }
-    setName("");
-    setSurname("");
-    setEmail("");
-    setPassword("");
-    setCheckTerms(false);
-    setCheckNewsletter(false);
   };
 
   return (
-    <section className="w-full h-screen flex justify-center items-center">
+    <section className="w-full h-[1000px] flex justify-center items-center">
       <div className="flex flex-col w-[500px]">
         <h1 className="text-5xl text-white font-bold font-thicccboi">
           Rejestracja
@@ -56,41 +55,45 @@ export const Register: FC = () => {
             type="text"
             name="name"
             className="w-full px-7 rounded-md font-thicccboi text-lg py-4"
-            placeholder="Imię"
+            placeholder="Imię*"
             value={name}
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
               setName(e.target.value)
             }
+            required
           />
           <input
             type="text"
             name="surname"
             className="w-full px-7 rounded-md font-thicccboi text-lg py-4"
-            placeholder="Nazwisko"
+            placeholder="Nazwisko*"
             value={surname}
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
               setSurname(e.target.value)
             }
+            required
           />
           <input
             type="text"
             name="email"
             className="w-full px-7 rounded-md font-thicccboi text-lg py-4"
-            placeholder="E-mail"
+            placeholder="E-mail*"
             value={email}
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
               setEmail(e.target.value)
             }
+            required
           />
           <input
             type="password"
             name="password"
             className="w-full px-7 rounded-md font-thicccboi text-lg py-4"
-            placeholder="Hasło"
+            placeholder="Hasło*"
             value={password}
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
               setPassword(e.target.value)
             }
+            required
           />
           <div className="w-full flex flex-col gap-2">
             <Checkbox
@@ -100,8 +103,8 @@ export const Register: FC = () => {
                 setCheckTerms(e.target.checked)
               }
             >
-              *I have read and accepted the Terms of Service and the Privacy
-              Policy.
+              *Przeczytałem i akceptuję warunki korzystania z usług i politykę
+              prywatności.
             </Checkbox>
             <Checkbox
               className="text-white m-0"
@@ -110,8 +113,8 @@ export const Register: FC = () => {
                 setCheckNewsletter(e.target.checked)
               }
             >
-              Newsletter - I consent to sending me marketing messages in
-              accordance with the Terms of Service
+              Newsletter - Wyrażam zgodę na przesyłanie mi wiadomości
+              marketingowych zgodnie z Regulaminem.
             </Checkbox>
           </div>
           <button

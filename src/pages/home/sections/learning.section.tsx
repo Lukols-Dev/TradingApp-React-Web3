@@ -27,6 +27,8 @@ export const LearningSection: FC = () => {
         <a
           className=" flex items-center justify-center cursor-pointer text-white text-base font-bold font-thicccboi border-[1px] border-solid border-white rounded-lg py-3 px-8 w-[150px] sm:ml-20 mt-10"
           href="https://tradingapp.gitbook.io/tradingapp/"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Rozpocznij
         </a>

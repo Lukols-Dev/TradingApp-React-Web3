@@ -5,7 +5,7 @@ import { UserAccountLayout } from "../components/layouts/account-layout";
 import { LoginRegisterLayout } from "../components/layouts/login-register-layout";
 import { CheckoutForm } from "../components/subscription";
 import { UserAuthContextProvider } from "../context/auth.context";
-import { Home, PaymentCheckout, Price, Register, Subscription } from "../pages";
+import { Home, Price, Register } from "../pages";
 import { Login } from "../pages/login/login.page";
 import { SuccessOrderPage } from "../pages/payment/success-order.page";
 import { Dashboard } from "../pages/user/dashboard.page";
@@ -24,14 +24,12 @@ export const BaseRoutes: FC = () => {
             <Route element={<FormRoute />}>
               <Route path="/price" element={<Price />} />
             </Route>
-            <Route path="/checkout" element={<PaymentCheckout />} />
           </Route>
           <Route element={<LoginRegisterLayout />}>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
           </Route>
           <Route element={<PrivateRoute />}>
-            <Route path="/subscription" element={<Subscription />} />
             <Route element={<UserAccountLayout />}>
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/settings" element={<SettingLayout />}>

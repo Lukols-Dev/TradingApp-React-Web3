@@ -26,11 +26,11 @@ export const NavBar: FC = () => {
           <nav className="hidden xl:flex gap-8	">
             <a
               className="text-white text-xl font-medium font-thicccboi"
-              href="https://tradingapp.gitbook.io/tradingapp/"
+              href="https://trading-app.gitbook.io/tradingapp-o-aplikacji/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Materiały
+              O aplikacji
             </a>
             <Link
               to="/price"
@@ -104,11 +104,11 @@ export const NavBar: FC = () => {
               )}
               <a
                 className="w-full h-[40px] text-white text-xl  font-medium font-thicccboi"
-                href="https://tradingapp.gitbook.io/tradingapp/"
+                href="https://trading-app.gitbook.io/tradingapp-o-aplikacji/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Materiały
+                O aplikacji
               </a>
               <Link
                 to="/price"

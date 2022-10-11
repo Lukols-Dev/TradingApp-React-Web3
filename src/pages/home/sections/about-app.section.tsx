@@ -29,14 +29,14 @@ export const AboutAppSection: FC = () => {
         </div>
         <img
           src={galaxyLogin}
-          className="h-auto w-[500px] z-20 relative left-20"
+          className="h-auto w-[500px] z-20 relative sm:left-20"
           alt="phone"
         />
       </div>
       <div className="flex flex-col-reverse sm:flex-col-reverse lg:flex-row-reverse gap-8">
         <img
           src={galaxySignal}
-          className="h-auto w-[500px] z-20 relative left-20"
+          className="h-auto w-[500px] z-20 relative sm:left-20"
           alt="phone"
         />
         <div className="flex flex-col sm:mt-24">
@@ -63,14 +63,14 @@ export const AboutAppSection: FC = () => {
         </div>
         <img
           src={galaxyBuy}
-          className="h-auto w-[500px] z-20 relative left-20"
+          className="h-auto w-[500px] z-20 relative sm:left-20"
           alt="phone"
         />
       </div>
       <div className="flex flex-col-reverse sm:flex-col-reverse lg:flex-row-reverse gap-8">
         <img
           src={galaxyMonitoring}
-          className="h-auto w-[500px] z-20 relative left-20"
+          className="h-auto w-[500px] z-20 relative sm:left-20"
           alt="phone"
         />
         <div className="flex flex-col sm:mt-24">

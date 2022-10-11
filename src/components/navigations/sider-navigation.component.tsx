@@ -8,6 +8,7 @@ import {
   IoHelpCircleOutline,
   IoOptions,
 } from "react-icons/io5";
+import { BiBookAlt } from "react-icons/bi";
 
 const { Sider } = Layout;
 
@@ -44,6 +45,11 @@ export const SiderNavigation: FC<SiderNavigationProps> = (props) => {
           <Link className={menuItemTextStyle} to="/dashboard">
             <IoGridOutline className={menuItemIconStyle} />
             Dashboard
+          </Link>
+        </Menu.Item>
+        <Menu.Item className={menuItemStyle} key="/learning">
+          <Link className={menuItemTextStyle} to="/dashboard">
+            <BiBookAlt className={menuItemIconStyle} /> Learning
           </Link>
         </Menu.Item>
         <Menu.Item className={menuItemStyle} key="/settings">

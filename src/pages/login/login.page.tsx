@@ -21,7 +21,7 @@ export const Login: FC = () => {
   };
 
   return (
-    <section className="w-full h-screen  flex justify-center items-center">
+    <section className="w-full h-[900px]  flex justify-center items-center">
       <div className="flex flex-col w-[500px]">
         <h1 className="text-5xl text-white font-bold font-thicccboi">
           Zaloguj się na konto

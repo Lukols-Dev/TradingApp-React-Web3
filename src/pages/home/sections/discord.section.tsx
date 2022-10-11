@@ -15,6 +15,8 @@ export const DiscordSection: FC = () => {
         <a
           className="w-[140px] h-[40px] rounded-lg bg-gradient-to-r from-red-500 to-blue-500 text-white font-medium font-thicccboi mt-10 sm:mt-20 flex items-center justify-center"
           href="https://discord.gg/eZKFX3skvh"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Dołącz
         </a>
