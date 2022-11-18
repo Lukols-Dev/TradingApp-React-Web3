@@ -9,6 +9,7 @@ import { Home, Price, Register } from "../pages";
 import { Login } from "../pages/login/login.page";
 import { SuccessOrderPage } from "../pages/payment/success-order.page";
 import { Dashboard } from "../pages/user/dashboard.page";
+import { Learning } from "../pages/user/learning.page";
 import { SubscriptionPlans } from "../pages/user/plans.page";
 import { FormRoute } from "./formRoute";
 import { PrivateRoute } from "./privateRoute.route";
@@ -35,6 +36,7 @@ export const BaseRoutes: FC = () => {
               <Route path="/settings" element={<SettingLayout />}>
                 <Route path="plans" element={<SubscriptionPlans />} />
               </Route>
+              <Route path="/learning" element={<Learning />} />
             </Route>
           </Route>
           <Route path="/order/success/:id" element={<SuccessOrderPage />} />

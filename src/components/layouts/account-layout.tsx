@@ -34,6 +34,11 @@ export const UserAccountLayout: FC = () => {
           <h1 className="font-roboto font-medium text-2xl m-0">Subscription</h1>
         );
         break;
+      case "/learning":
+        setHeaderNav(
+          <h1 className="font-roboto font-medium text-2xl m-0">Learning</h1>
+        );
+        break;
     }
   }, [pathname]);
 

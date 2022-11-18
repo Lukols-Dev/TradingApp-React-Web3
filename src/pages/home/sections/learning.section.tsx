@@ -1,10 +1,11 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 
 import learnDash from "../../../assets/learn-dashboard.png";
 
 export const LearningSection: FC = () => {
   return (
-    <section className="w-full h-[500px] gap-10 flex flex-col items-center justify-center z-10 mt-40 sm:h-[500px] sm:mt-40 sm:flex-col lg:flex-row">
+    <section className="w-full h-[600px] gap-10 flex flex-col items-center justify-center z-10 mt-40 sm:h-[500px] sm:mt-40 sm:flex-col lg:flex-row">
       <div className="flex items-center justify-center w-[340px] relative lg:bottom-32 sm:min-w-[400px] sm:w-[600px] lg:min-w-[600px] lg:w-[600px]">
         <img
           className="rounded-lg border-white/[.3] border-2"
@@ -24,14 +25,12 @@ export const LearningSection: FC = () => {
           Dodatkowo znajdziesz tam zalecenia oraz wskazówki, dzięki którym Twoja
           szansa na zyskowne transakcje zostanie zwiększona.
         </p>
-        <a
+        <Link
           className=" flex items-center justify-center cursor-pointer text-white text-base font-bold font-thicccboi border-[1px] border-solid border-white rounded-lg py-3 px-8 w-[150px] sm:ml-20 mt-10"
-          href="https://tradingapp.gitbook.io/tradingapp/"
-          target="_blank"
-          rel="noopener noreferrer"
+          to="/dashboard"
         >
           Rozpocznij
-        </a>
+        </Link>
       </div>
     </section>
   );

@@ -48,7 +48,7 @@ export const SiderNavigation: FC<SiderNavigationProps> = (props) => {
           </Link>
         </Menu.Item>
         <Menu.Item className={menuItemStyle} key="/learning">
-          <Link className={menuItemTextStyle} to="/dashboard">
+          <Link className={menuItemTextStyle} to="/learning">
             <BiBookAlt className={menuItemIconStyle} /> Learning
           </Link>
         </Menu.Item>
