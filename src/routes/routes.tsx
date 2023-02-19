@@ -8,9 +8,11 @@ import { UserAuthContextProvider } from "../context/auth.context";
 import { Home, Price, Register } from "../pages";
 import { Login } from "../pages/login/login.page";
 import { SuccessOrderPage } from "../pages/payment/success-order.page";
+import { PrivacyPolicy } from "../pages/policy/privacy-policy.page";
 import { Dashboard } from "../pages/user/dashboard.page";
 import { Learning } from "../pages/user/learning.page";
 import { SubscriptionPlans } from "../pages/user/plans.page";
+import { Profile } from "../pages/user/profile.page";
 import { FormRoute } from "./formRoute";
 import { PrivateRoute } from "./privateRoute.route";
 
@@ -22,6 +24,7 @@ export const BaseRoutes: FC = () => {
           <Route path="/test" element={<CheckoutForm />} />
           <Route element={<BaseLayout />}>
             <Route path="/" element={<Home />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route element={<FormRoute />}>
               <Route path="/price" element={<Price />} />
             </Route>
@@ -37,6 +40,7 @@ export const BaseRoutes: FC = () => {
                 <Route path="plans" element={<SubscriptionPlans />} />
               </Route>
               <Route path="/learning" element={<Learning />} />
+              <Route path="/profile" element={<Profile />} />
             </Route>
           </Route>
           <Route path="/order/success/:id" element={<SuccessOrderPage />} />

@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 
 export const Footer: FC = () => {
   return (
@@ -8,9 +9,12 @@ export const Footer: FC = () => {
           © 2021 - 2022 TradingApp
         </p>
         <div className=" flex gap-6">
-          <p className="text-white/[.2] text-sm font-medium font-thicccboi mr-4 sm:mr-0">
+          <Link
+            to="/privacy-policy"
+            className="text-white/[.2] text-sm font-medium font-thicccboi mr-4 sm:mr-0 z-10"
+          >
             Polityka prywatności
-          </p>
+          </Link>
           <p className="text-white/[.2] text-sm font-medium font-thicccboi">
             Regulamin
           </p>

@@ -2,12 +2,7 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 
 import { Menu, Layout } from "antd";
-import {
-  IoExit,
-  IoGridOutline,
-  IoHelpCircleOutline,
-  IoOptions,
-} from "react-icons/io5";
+import { IoExit, IoGridOutline, IoOptions } from "react-icons/io5";
 import { BiBookAlt } from "react-icons/bi";
 
 const { Sider } = Layout;
@@ -58,13 +53,6 @@ export const SiderNavigation: FC<SiderNavigationProps> = (props) => {
           </Link>
         </Menu.Item>
       </Menu>
-      <a
-        className="h-[40px] w-[170px] text-sm text-black bg-[#5E6366]/[.2] flex gap-2 absolute bottom-20 items-center justify-center rounded-2xl"
-        href="mailto:helpdesktradingapp@gmail.com"
-      >
-        <IoHelpCircleOutline className="text-xl" />
-        Pomoc
-      </a>
       <button
         className="h-[60px] w-[170px] text-lg text-[#CC5F5F] flex gap-2 absolute bottom-0 items-center justify-center"
         onClick={props.logOut}

@@ -26,11 +26,30 @@ export class UserDataService {
     ).data;
   };
 
+  //Update user data Email, Name, Surname
+  static updateUserData = async (
+    userID: string,
+    name: string,
+    surname: string
+  ) => {
+    return (
+      await httpAPI.post<string>("/auth/account/id", {
+        userID: userID,
+        name: name,
+        surname: surname,
+      })
+    ).data;
+  };
+
   static deleteSubscription = async (userID: string) => {
     const docRef = doc(cloudFirestore, "USERS", `${userID}`);
     return updateDoc(docRef, {
       customerID: deleteField(),
       subscriptionID: deleteField(),
     });
+  };
+
+  static deleteAccountData = async (userID: string) => {
+    return (await httpAPI.delete<any>(`/auth/account/${userID}`)).data;
   };
 }

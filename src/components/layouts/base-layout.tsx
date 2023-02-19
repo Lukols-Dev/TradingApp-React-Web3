@@ -3,9 +3,6 @@ import { NavBar } from "../navigations";
 import { Outlet } from "react-router-dom";
 import { Footer } from "../footer";
 
-import Bitcoin from "../../assets/Bitcoin.png";
-import Litecoin from "../../assets/LiteCoin.png";
-import Monero from "../../assets/coins/monero.svg";
 import Star2 from "../../assets/stars/star_2.svg";
 import Star3 from "../../assets/stars/star_3.svg";
 import Star1 from "../../assets/stars/star_1.svg";
@@ -13,84 +10,6 @@ import Star1 from "../../assets/stars/star_1.svg";
 export const BaseLayout: FC = () => {
   return (
     <div className="bg-[#0B0B0F] relative overflow-hidden">
-      <svg
-        className=" hidden absolute right-[200px] top-[200px] xl:inline"
-        width="61"
-        height="60"
-        viewBox="0 0 61 60"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M30.5 0L32.8344 24.4567L52.0668 8.7868L36.1357 27.7039L61 30L36.1357 32.2961L52.0668 51.2132L32.8344 35.5433L30.5 60L28.1656 35.5433L8.93324 51.2132L24.8643 32.2961L0 30L24.8643 27.7039L8.93324 8.7868L28.1656 24.4567L30.5 0Z"
-          fill="white"
-        />
-      </svg>
-      <svg
-        className="hidden  xl:inline absolute left-[200px] top-[200px]"
-        width="74"
-        height="89"
-        viewBox="0 0 74 89"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M74 44.3785C59.485 45.9478 51.1455 47.3915 46.0257 52.1621C40.0086 57.7486 38.5835 67.9803 37 88.4435C35.3638 67.227 33.8859 57.0582 27.2882 51.5971C22.1683 47.3287 13.8816 45.9478 0 44.4413C14.4622 42.872 22.8545 41.4283 27.9215 36.7205C33.9914 31.0711 35.4165 20.9022 37 0.376221C38.4779 19.2702 39.7974 29.3763 44.7061 35.214C49.6148 41.0516 58.1655 42.6837 74 44.3785Z"
-          fill="white"
-        />
-      </svg>
-      <svg
-        className="hidden  xl:inline absolute right-[100px] top-[300px]"
-        width="54"
-        height="56"
-        viewBox="0 0 54 56"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M40.4708 0.294922C34.0714 13.2625 30.5357 19.7292 26.9708 19.7292C23.4058 19.7292 19.8701 13.2625 13.5 0.294922C19.8701 13.2625 22.9091 20.1056 21.1266 23.6982C19.3442 27.2908 12.7695 27.6672 0 27.6672C13.237 27.6672 19.8117 28.0436 21.3019 32.0125C22.7045 35.7078 19.6656 42.5166 13.5 55.0395C19.8993 42.0718 23.4351 35.6051 27 35.6051C30.5649 35.6051 34.1007 42.0718 40.5 55.0395C33.7208 41.2507 30.7403 34.4076 33.2532 30.9861C35.474 27.9751 42.0195 27.6672 54 27.6672C40.5 27.6672 33.9253 27.2566 32.6104 23.0481C31.4123 19.2844 34.4513 12.5098 40.4708 0.294922Z"
-          fill="white"
-        />
-      </svg>
-      <svg
-        className="hidden  xl:inline absolute right-[300px] top-[500px]"
-        width="61"
-        height="60"
-        viewBox="0 0 61 60"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M30.5 0L32.8344 24.4567L52.0668 8.7868L36.1357 27.7039L61 30L36.1357 32.2961L52.0668 51.2132L32.8344 35.5433L30.5 60L28.1656 35.5433L8.93324 51.2132L24.8643 32.2961L0 30L24.8643 27.7039L8.93324 8.7868L28.1656 24.4567L30.5 0Z"
-          fill="white"
-        />
-      </svg>
-      <svg
-        className="hidden  xl:inline absolute left-[200px] top-[800px]"
-        width="54"
-        height="55"
-        viewBox="0 0 54 55"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M40.4708 0.0947266C34.0714 13.0623 30.5357 19.529 26.9708 19.529C23.4058 19.529 19.8701 13.0623 13.5 0.0947266C19.8701 13.0623 22.9091 19.9054 21.1266 23.498C19.3442 27.0906 12.7695 27.467 0 27.467C13.237 27.467 19.8117 27.8434 21.3019 31.8123C22.7045 35.5076 19.6656 42.3165 13.5 54.8393C19.8993 41.8717 23.4351 35.405 27 35.405C30.5649 35.405 34.1007 41.8717 40.5 54.8393C33.7208 41.0505 30.7403 34.2074 33.2532 30.7859C35.474 27.7749 42.0195 27.467 54 27.467C40.5 27.467 33.9253 27.0564 32.6104 22.8479C31.4123 19.0842 34.4513 12.3096 40.4708 0.0947266Z"
-          fill="white"
-        />
-      </svg>
-
-      <div className="hidden xl:inline absolute left-[-200px] top-[200px] bg-[#2670FF]/[.4] blur-[100px] w-[400px] h-[400px] z-10"></div>
-      <div className="hidden xl:inline absolute right-[-200px] top-[300px] bg-[#FF4141]/[.4] blur-[100px] w-[400px] h-[400px] z-10"></div>
-      <img
-        alt="Hero"
-        src={Bitcoin}
-        className="hidden  xl:inline absolute left-[150px] top-[300px] 2xl:left-[250px] top-[520px]"
-      />
-      <img
-        alt="Hero"
-        src={Litecoin}
-        className="hidden right-[170px] xl:inline absolute 2xl:right-[200px] top-[253.67px]"
-      />
       <svg
         className=" absolute right-[0px] sm:right-[-300px] xl:right-[-100px] top-[800px] z-10"
         width="516"
@@ -275,12 +194,6 @@ export const BaseLayout: FC = () => {
           />
         </g>
       </svg>
-
-      <img
-        className="hidden  xl:inline absolute top-[2300px] left-[150px]"
-        alt="ethereum"
-        src={Monero}
-      />
       <img
         className="hidden  xl:inline absolute top-[1500px] left-[20px]"
         alt="ethereum"

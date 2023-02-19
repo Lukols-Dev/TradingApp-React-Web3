@@ -26,7 +26,8 @@ export const Register: FC = () => {
           checkTerms,
           checkNewsletter
         );
-        navigate(`/register/complete?email=${email}`);
+        // navigate(`/register/complete?email=${email}`);
+        navigate(`/login`);
       } catch (error) {
         console.log(error);
       }
