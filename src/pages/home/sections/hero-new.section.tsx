@@ -10,7 +10,6 @@ import { ref, listAll, getDownloadURL } from "firebase/storage";
 import { firebaseStorage, cloudFirestore } from "../../../config/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { timeConverter } from "../../../utils/timeConverter";
-import { DateTimeConverter } from "../../../utils/dateConverter";
 import { PieChart } from "../../../components/charts/pieChart";
 import { Select } from "antd";
 import { motion } from "framer-motion";
@@ -110,9 +109,6 @@ export const HeroSectionNew: FC = () => {
     }
   }, [date, interval]);
 
-  // console.log("summary:", summary);
-  // console.log("itemArray: ", itemsArray);
-
   return (
     <section className="flex w-full h-[850px] sm:h-[800px] items-center relative">
       <div className="w-[50%] absolute top-[180px] left-0">
@@ -158,12 +154,12 @@ export const HeroSectionNew: FC = () => {
         className="object-cover h-auto w-[270px] z-20 absolute right-[300px] top-[150px]"
         alt=""
       />
-      <div className="flex flex-col bg-white p-2 bg-opacity-20 backdrop-filter backdrop-blur-lg w-[400px] h-[120px] absolute z-20 right-[20px] top-[260px] border border-white/[.2] rounded-lg">
+      <div className="flex flex-col bg-white p-2 bg-opacity-20 backdrop-filter backdrop-blur-lg w-fit h-[120px] absolute z-20 right-[20px] top-[260px] border border-white/[.2] rounded-lg">
         <div className="flex justify-between text-white">
           <p className="m-0 text-[12px] text-white font-normal font-thicccboi">
             Zyski i Starty
           </p>
-          <p className="m-0">{DateTimeConverter(1669581318)}</p>
+          <p className="m-0">{currentDate()}</p>
         </div>
         <div className="mt-2 flex items-center w-full h-[40px] gap-x-4">
           <img className="h-full object-cover" src={atomIcon} alt="" />
@@ -262,23 +258,22 @@ export const HeroSectionNew: FC = () => {
             </div>
             <div className="w-full mt-[50px] h-full overflow-auto space-y-1 item__list__scroll">
               {itemsArray.length > 0 ? (
-                itemsArray
-                  .map((item: any, index: any) => (
-                    <>
-                      <CoinItem
-                        key={index}
-                        coinName={item.symbol}
-                        openTime={timeConverter(item.start_trading_time)}
-                        closeTime={timeConverter(item.finish_trading_time)}
-                        position={item.side}
-                        reciveTime={timeConverter(item.receive_signal_time)}
-                        entryPrice={item.entry_price}
-                        takeProfit={item.take_profit_price}
-                        stopLoss={item.stop_loss_price}
-                      />
-                      <div className="w-full h-[2px] rounded-lg bg-[black]/[.4]"></div>
-                    </>
-                  ))
+                itemsArray.map((item: any, index: any) => (
+                  <>
+                    <CoinItem
+                      key={index}
+                      coinName={item.symbol}
+                      openTime={timeConverter(item.start_trading_time)}
+                      closeTime={timeConverter(item.finish_trading_time)}
+                      position={item.side}
+                      reciveTime={timeConverter(item.receive_signal_time)}
+                      entryPrice={item.entry_price}
+                      takeProfit={item.take_profit_price}
+                      stopLoss={item.stop_loss_price}
+                    />
+                    <div className="w-full h-[2px] rounded-lg bg-[black]/[.4]"></div>
+                  </>
+                ))
               ) : (
                 <div>...Loading</div>
               )}
