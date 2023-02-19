@@ -6,7 +6,7 @@ export const Footer: FC = () => {
     <div className="w-full h-[50px] flex flex-col">
       <div className="mx-10 gap-4 sm:mx-36 h-12 sm:h-10 items-center justify-between flex flex-col-reverse sm:flex-row sm:border-white/[.2] sm:border-t">
         <p className="text-white/[.2] text-sm font-medium font-thicccboi">
-          © 2021 - 2022 TradingApp
+          © 2023 TradingApp
         </p>
         <div className=" flex gap-6">
           <Link
