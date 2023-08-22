@@ -11,10 +11,10 @@ import { firebaseStorage, cloudFirestore } from "../../../config/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { timeConverter } from "../../../utils/timeConverter";
 import { PieChart } from "../../../components/charts/pieChart";
-import { Select } from "antd";
+import { Select, Spin } from "antd";
 import { motion } from "framer-motion";
 import { SummaryDataService } from "../../../services/summary.service";
-import { currentDate, reverseDate } from "../../../utils/date";
+import { currentDate } from "../../../utils/date";
 import { CoinItem } from "../../../components/item/coinItem";
 
 export const HeroSectionNew: FC = () => {
@@ -85,11 +85,11 @@ export const HeroSectionNew: FC = () => {
 
   const getDayPosition = async (day: string, interval: string) => {
     const resp = await SummaryDataService.getDayPositions(day, interval);
+    console.log(resp.data);
     setSummary(resp.data);
     if (itemsArray.length === 0) {
       await setItemsArray(
         itemsArray.concat(
-          resp.data.cancel_items,
           resp.data.stop_loss_items,
           resp.data.take_profit_items
         )
@@ -98,22 +98,22 @@ export const HeroSectionNew: FC = () => {
   };
 
   useEffect(() => {
-    setDate(currentDate(undefined, true));
+    setDate("2023_02_16");
     // eslint-disable-next-line no-implied-eval
     setInterval("15m_LONG");
   }, []);
 
   useEffect(() => {
     if (date && interval) {
-      getDayPosition(reverseDate(date), interval);
+      getDayPosition(date, interval);
     }
   }, [date, interval]);
 
   return (
-    <section className="flex w-full h-[850px] sm:h-[800px] items-center relative">
-      <div className="w-[50%] absolute top-[180px] left-0">
+    <section className="flex w-full h-[1100px]  sm:h-[950px] lg:h-[650px] items-center relative">
+      <div className="flex flex-col w-[100%] left-1/2 right-1/2 transform -translate-x-1/2 absolute top-[180px] lg:-translate-x-0 lg:w-[50%] lg:left-0">
         <motion.h1
-          className="text-5xl text-white font-thicccboi"
+          className=" text-3xl sm:text-5xl text-white font-thicccboi w-[80%] sm:w-[100%]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
@@ -121,7 +121,7 @@ export const HeroSectionNew: FC = () => {
           Profesjonalne narzędzie do automatycznego tradingu
         </motion.h1>
         <motion.p
-          className="text-[12px] w-[80%] sm:text-xs mt-4 xl:text-base text-[#898CA9] font-normal font-thicccboi z-10"
+          className="text-[12px] w-[80%] max-w-[400px] sm:w-[100%] sm:text-xs mt-4 xl:text-base text-[#898CA9] font-normal font-thicccboi z-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
@@ -131,7 +131,7 @@ export const HeroSectionNew: FC = () => {
           trading.
         </motion.p>
         <motion.div
-          className="flex mt-9 gap-5 "
+          className="flex mt-4 sm:mt-9 gap-5 "
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
@@ -151,10 +151,10 @@ export const HeroSectionNew: FC = () => {
       </div>
       <img
         src={mobileHero}
-        className="object-cover h-auto w-[270px] z-20 absolute right-[300px] top-[150px]"
+        className="object-cover h-auto w-[230px] sm:w-[270px] z-20 absolute left-1/2 right-1/2 -translate-x-1/2 top-[550px] sm:top-[550px] lg:-translate-x-0  lg:top-[150px] xl:right-[300px]"
         alt=""
       />
-      <div className="flex flex-col bg-white p-2 bg-opacity-20 backdrop-filter backdrop-blur-lg w-fit h-[120px] absolute z-20 right-[20px] top-[260px] border border-white/[.2] rounded-lg">
+      <div className="flex flex-col bg-white p-2 bg-opacity-20 backdrop-filter backdrop-blur-lg min-w-[350px]  w-fit h-[120px] absolute z-20 right-[-10px] sm:right-[-80px] top-[680px] lg:right-[-80px] lg:top-[260px] border border-white/[.2] rounded-lg xl:right-[120px]">
         <div className="flex justify-between text-white">
           <p className="m-0 text-[12px] text-white font-normal font-thicccboi">
             Zyski i Starty
@@ -233,12 +233,12 @@ export const HeroSectionNew: FC = () => {
               Aktualne zyski i starty użytkowników:
               <Select
                 className="text-bold cursor-pointer"
-                defaultValue={date}
+                defaultValue={"16.02.2023"}
                 onChange={handleChange}
                 options={[
-                  { value: currentDate(undefined, true), label: currentDate() },
-                  { value: currentDate(1, true), label: currentDate(1) },
-                  { value: currentDate(2, true), label: currentDate(2) },
+                  { value: "2023_02_16", label: "16.02.2023" },
+                  { value: "2023_02_15", label: "15.02.2023" },
+                  { value: "2023_02_14", label: "14.02.2023" },
                 ]}
               />
               <Select
@@ -253,31 +253,46 @@ export const HeroSectionNew: FC = () => {
                 ]}
               />
             </p>
-            <div className="flex w-[280px] items-center justify-center mx-auto">
-              <PieChart summaryData={summary} />
-            </div>
-            <div className="w-full mt-[50px] h-full overflow-auto space-y-1 item__list__scroll">
-              {itemsArray.length > 0 ? (
-                itemsArray.map((item: any, index: any) => (
-                  <>
-                    <CoinItem
-                      key={index}
-                      coinName={item.symbol}
-                      openTime={timeConverter(item.start_trading_time)}
-                      closeTime={timeConverter(item.finish_trading_time)}
-                      position={item.side}
-                      reciveTime={timeConverter(item.receive_signal_time)}
-                      entryPrice={item.entry_price}
-                      takeProfit={item.take_profit_price}
-                      stopLoss={item.stop_loss_price}
-                    />
-                    <div className="w-full h-[2px] rounded-lg bg-[black]/[.4]"></div>
-                  </>
-                ))
-              ) : (
-                <div>...Loading</div>
-              )}
-            </div>
+            {summary ? (
+              <>
+                <div className="flex w-[280px] items-center justify-center mx-auto">
+                  <PieChart summaryData={summary} />
+                </div>
+                <div className="w-full mt-[50px] h-full overflow-auto space-y-1 item__list__scroll">
+                  {itemsArray.length > 0 ? (
+                    itemsArray.map((item: any, index: any) => (
+                      <>
+                        <CoinItem
+                          key={index}
+                          coinName={item.symbol}
+                          openTime={timeConverter(item.start_trading_time)}
+                          closeTime={timeConverter(item.finish_trading_time)}
+                          position={item.side}
+                          reciveTime={timeConverter(item.receive_signal_time)}
+                          entryPrice={item.entry_price}
+                          takeProfit={item.take_profit_price}
+                          stopLoss={item.stop_loss_price}
+                          label={item.label}
+                        />
+                        <div className="w-full h-[2px] rounded-lg bg-[black]/[.4]"></div>
+                      </>
+                    ))
+                  ) : (
+                    <Spin
+                      spinning={true}
+                      tip="Loading data..."
+                      className="w-full h-full flex items-center justify-center"
+                    ></Spin>
+                  )}
+                </div>
+              </>
+            ) : (
+              <Spin
+                spinning={true}
+                tip="Loading data..."
+                className="w-full h-full flex items-center justify-center"
+              ></Spin>
+            )}
           </div>
         </div>
       ) : (

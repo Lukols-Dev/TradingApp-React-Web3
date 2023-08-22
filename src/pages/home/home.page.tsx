@@ -1,7 +1,7 @@
 import { FC } from "react";
 import {
   AboutAppSection,
-  CoinsSection,
+  // CoinsSection,
   DiscordSection,
   EmptySection,
   InfoSection,
@@ -11,9 +11,9 @@ import { HeroSectionNew } from "./sections/hero-new.section";
 
 export const Home: FC = () => {
   return (
-    <div className="w-full flex flex-col justify-between relative overflow-hidden">
+    <div className="w-full flex flex-col justify-between relative ">
       <HeroSectionNew />
-      <CoinsSection />
+      {/* <CoinsSection /> */}
       <InfoSection />
       <LearningSection />
       <AboutAppSection />

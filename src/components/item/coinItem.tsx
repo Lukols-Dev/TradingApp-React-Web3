@@ -10,6 +10,7 @@ interface CoinItemProps {
   takeProfit?: any;
   entryPrice?: any;
   stopLoss?: any;
+  label?: any;
 }
 
 export const CoinItem: FC<CoinItemProps> = ({
@@ -22,6 +23,7 @@ export const CoinItem: FC<CoinItemProps> = ({
   takeProfit,
   entryPrice,
   stopLoss,
+  label,
 }) => {
   return (
     <div className="bg- h-[40px] w-full flex">
@@ -69,14 +71,18 @@ export const CoinItem: FC<CoinItemProps> = ({
           stop loss:<b>{Math.round(stopLoss * 1000) / 1000}</b>
         </p>
       </div>
-      {/* <div className="flex flex-col ml-auto mr-0 items-end relative">
-        <p className="m-0 flex text-[26px] font-medium font-thicccboi text-[#3EA135]">
-          +50
+      <div className="flex flex-col ml-auto mr-0 items-end relative">
+        <p
+          className={`m-0 flex text-[26px] font-medium font-thicccboi ${
+            label === "take_profit" ? " text-[#3EA135]" : " text-[red]"
+          }`}
+        >
+          {entryPrice - (label === "take_profit" ? takeProfit : stopLoss)}
         </p>
         <p className="m-0 text-[10px] text-black font-normal font-thicccboi absolute bottom-[-5px]">
           USDT
         </p>
-      </div> */}
+      </div>
     </div>
   );
 };

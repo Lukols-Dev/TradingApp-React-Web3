@@ -210,7 +210,7 @@ export const BaseLayout: FC = () => {
         src={Star1}
       />
       <NavBar />
-      <main className="mx-36 flex">
+      <main className="mx-10 sm:mx-36 flex">
         <Outlet />
       </main>
       <Footer />
